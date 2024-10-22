@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dn8lar488daha"]
+
+[ext_resource type="Script" path="res://src/hud.gd" id="1_tqs13"]
+
+[node name="hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tqs13")
+
+[node name="timerBackground" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 36.0
+offset_right = 206.0
+offset_bottom = 96.0
+color = Color(0, 0, 0, 1)
+
+[node name="timerLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 36.0
+offset_right = 206.0
+offset_bottom = 96.0
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = " [center]00:00[center]"
+
+[node name="gameTimer" type="Timer" parent="."]
+wait_time = 120.0
+autostart = true

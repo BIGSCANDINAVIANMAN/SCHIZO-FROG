@@ -1,0 +1,158 @@
+[gd_scene load_steps=23 format=3 uid="uid://bw313ph3mn5vr"]
+
+[ext_resource type="Script" path="res://src/player.gd" id="1_uqn3s"]
+[ext_resource type="Texture2D" uid="uid://d2t73wwvw1r0l" path="res://assets/runwalk.png" id="2_04rmf"]
+[ext_resource type="Script" path="res://src/sprite.gd" id="2_fj0lq"]
+[ext_resource type="Script" path="res://src/schizophrenia.gd" id="2_sb4o5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkbne"]
+size = Vector2(55, 57)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vqi45"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(6150, 6150, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvusg"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(2050, 6150, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfw3d"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(6150, 4100, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmwgp"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(2050, 4100, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4s78"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(0, 0, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a806"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(4100, 2050, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tb861"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(0, 2050, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5uvl"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(4100, 0, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owr5r"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(2050, 0, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot2vu"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(4100, 6150, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkdx7"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(0, 6150, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nl7o7"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(4100, 4100, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxnw2"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(0, 4100, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wl6un"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(6150, 2050, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2q7m0"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(2050, 2050, 2050, 2050)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx65a"]
+atlas = ExtResource("2_04rmf")
+region = Rect2(6150, 0, 2050, 2050)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_df7ib"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"teleport",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vqi45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvusg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfw3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmwgp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4s78")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a806")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tb861")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5uvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_owr5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot2vu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkdx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nl7o7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxnw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wl6un")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2q7m0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx65a")
+}],
+"loop": true,
+"name": &"walkRun",
+"speed": 5.0
+}]
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_uqn3s")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bkbne")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_df7ib")
+animation = &"walkRun"
+script = ExtResource("2_fj0lq")
+
+[node name="dashSprite" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_df7ib")
+animation = &"walkRun"
+frame = 8
+
+[node name="schizophrenia" type="Node" parent="."]
+script = ExtResource("2_sb4o5")
+
+[connection signal="dashed" from="schizophrenia" to="sprite" method="_on_schizophrenia_dashed"]
