@@ -10,6 +10,7 @@ var activeAbilities = {
 
 @onready var player = get_parent()
 signal dashed
+signal teleported
 
 func _physics_process(_delta: float) -> void:
 	if shouldActivate("switchLeftRight"):
@@ -68,10 +69,15 @@ func antiSonic(antiSonicFactor):
 	await get_tree().create_timer(1).timeout
 	player.accel = initialAccel
 
-# note how tf does this work can it teleport you into death or
+# 0.3 sec for each half of the teleport
 func teleport(teleportRadius): 
 	var angle = randi_range(0, 7) * PI / 4
+	teleported.emit()
+	player.frozen = true
+	await get_tree().create_timer(0.4).timeout
 	player.global_position += teleportRadius * Vector2(cos(angle), sin(angle))
+	await get_tree().create_timer(0.4).timeout
+	player.frozen = false
 
 # cooldown stuff this was supposed to be in a status class but um
 
