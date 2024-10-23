@@ -381,7 +381,7 @@ script = ExtResource("2_fj0lq")
 modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_df7ib")
-animation = &"teleport"
+animation = &"walkRun"
 
 [node name="schizophrenia" type="Node" parent="."]
 script = ExtResource("2_sb4o5")
