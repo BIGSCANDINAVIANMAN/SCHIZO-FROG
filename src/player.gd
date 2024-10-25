@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-var accel = 40
+var accel = 30
 var drag = 0.1
 
 var controls = {
@@ -20,14 +20,9 @@ func _physics_process(_delta: float) -> void:
 	
 	if direction:
 		directionFacing = direction
-	
+	if frozen:
+		velocity = Vector2.ZERO
 	move_and_slide()
-
-func getHit():
-	get_tree().change_scene_to_file("res://scenes/fed.tscn")
-
-func win():
-	get_tree().change_scene_to_file("res://scenes/hungry.tscn")
 
 func getDirection() -> Vector2:
 	if frozen:

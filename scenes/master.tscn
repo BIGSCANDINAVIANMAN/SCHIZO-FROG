@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhlqy7aaoym1t"]
+
+[ext_resource type="PackedScene" uid="uid://bi0bg0p2qdibq" path="res://scenes/main.tscn" id="1_h3gpp"]
+[ext_resource type="Script" path="res://src/master.gd" id="1_rcd5n"]
+
+[node name="master" type="Node"]
+process_mode = 3
+script = ExtResource("1_rcd5n")
+
+[node name="main" parent="." instance=ExtResource("1_h3gpp")]
+process_mode = 1
+
+[connection signal="gameOver" from="main" to="." method="_on_main_game_over"]

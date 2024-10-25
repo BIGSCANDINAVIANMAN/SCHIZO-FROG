@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi0bg0p2qdibq"]
+[gd_scene load_steps=9 format=3 uid="uid://bi0bg0p2qdibq"]
 
+[ext_resource type="Script" path="res://src/main.gd" id="1_hp02j"]
 [ext_resource type="Script" path="res://src/table.gd" id="1_i2ch3"]
 [ext_resource type="PackedScene" uid="uid://bw313ph3mn5vr" path="res://scenes/player.tscn" id="1_oecfp"]
-[ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="2_y2q1y"]
 [ext_resource type="PackedScene" uid="uid://dn8lar488daha" path="res://scenes/hud.tscn" id="4_s8cje"]
+[ext_resource type="PackedScene" uid="uid://u5xyc5ijr1nq" path="res://scenes/chinese.tscn" id="5_a15qq"]
 
 [sub_resource type="Gradient" id="Gradient_yrfoy"]
 colors = PackedColorArray(0, 0, 0, 1, 0.345098, 0.266667, 0.254902, 1)
@@ -16,9 +17,11 @@ background_mode = 3
 
 [node name="main" type="Node2D"]
 scale = Vector2(1.3, 1.2)
+script = ExtResource("1_hp02j")
 
-[node name="table" type="Area2D" parent="."]
+[node name="table" type="Area2D" parent="." node_paths=PackedStringArray("main")]
 script = ExtResource("1_i2ch3")
+main = NodePath("..")
 
 [node name="tableSprite" type="Sprite2D" parent="table"]
 position = Vector2(-0.769302, -0.833332)
@@ -40,7 +43,9 @@ position_smoothing_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4tun8")
 
-[node name="hazard" parent="." instance=ExtResource("2_y2q1y")]
-position = Vector2(-337.692, 150.833)
+[node name="chinese" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_a15qq")]
+position = Vector2(-581, -19.2369)
+rotation = 1.5708
+player = NodePath("../player")
 
 [connection signal="body_entered" from="table" to="table" method="_on_body_entered"]
