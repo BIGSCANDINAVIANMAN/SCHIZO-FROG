@@ -9,10 +9,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
-@onready var screen = get_node("Screen")
-@onready var main = get_node("Main")
-
-func _on_Button_pressed():
-	screen.modulate.a = 0
-	main.modulate.a = 1

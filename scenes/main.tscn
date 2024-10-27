@@ -34,6 +34,7 @@ polygon = PackedVector2Array(664.615, -459.167, 662.308, 470, 663.077, 552.5, 73
 [node name="player" parent="." instance=ExtResource("1_oecfp")]
 
 [node name="camera" type="Camera2D" parent="player"]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
 [node name="hudLayer" type="CanvasLayer" parent="."]
