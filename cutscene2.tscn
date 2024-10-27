@@ -1,0 +1,104 @@
+[gd_scene load_steps=20 format=3 uid="uid://ckugg64l3g4ga"]
+
+[ext_resource type="Script" path="res://src/cutscene.gd" id="1_7iygr"]
+[ext_resource type="Texture2D" uid="uid://bi1bqrqd3cqew" path="res://assets/cutscene/1/1.png" id="2_hl3jk"]
+[ext_resource type="Texture2D" uid="uid://5a5yw0mh8vei" path="res://assets/cutscene/1/2.png" id="3_6fl4i"]
+[ext_resource type="Texture2D" uid="uid://cd00t1j5qpkvb" path="res://assets/cutscene/1/3.png" id="4_cphvk"]
+[ext_resource type="Texture2D" uid="uid://2tp4tx12vhji" path="res://assets/cutscene/1/4.png" id="5_uonw5"]
+[ext_resource type="Texture2D" uid="uid://22a10ffumhcs" path="res://assets/cutscene/1/5.png" id="6_ibavn"]
+[ext_resource type="Texture2D" uid="uid://bp0v3pituh2ib" path="res://assets/cutscene/1/6.png" id="7_rtl5a"]
+[ext_resource type="Texture2D" uid="uid://d14g1c8fyn27v" path="res://assets/cutscene/1/7.png" id="8_y27uf"]
+[ext_resource type="Texture2D" uid="uid://bnocpcatrw01e" path="res://assets/cutscene/1/8.png" id="9_rgukd"]
+[ext_resource type="Texture2D" uid="uid://lswgghd1kysg" path="res://assets/cutscene/1/9.png" id="10_svmux"]
+[ext_resource type="Texture2D" uid="uid://dili11v2tg0qp" path="res://assets/cutscene/1/10.png" id="11_wrffh"]
+[ext_resource type="Texture2D" uid="uid://bg0nv1qaugd2n" path="res://assets/cutscene/1/11.png" id="12_0rgtj"]
+[ext_resource type="Texture2D" uid="uid://5y043sswlaev" path="res://assets/cutscene/1/12.png" id="13_55100"]
+[ext_resource type="Texture2D" uid="uid://0w3x61f503uq" path="res://assets/cutscene/1/13.png" id="14_2oxj6"]
+[ext_resource type="Texture2D" uid="uid://bvl7k6eei814g" path="res://assets/cutscene/1/14.png" id="15_nk80h"]
+[ext_resource type="Texture2D" uid="uid://bqxh3r3l0b25a" path="res://assets/cutscene/1/15.png" id="16_auvj6"]
+[ext_resource type="Texture2D" uid="uid://bqg4ukil6v24x" path="res://assets/textBox.png" id="17_4cy0m"]
+[ext_resource type="Theme" uid="uid://sb2iayvh2cfa" path="res://theme.tres" id="18_8pjq0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x657y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hl3jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6fl4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_cphvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uonw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ibavn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rtl5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y27uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rgukd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_svmux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_wrffh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_0rgtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_55100")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2oxj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nk80h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_auvj6")
+}],
+"loop": true,
+"name": &"1",
+"speed": 15.0
+}]
+
+[node name="cutscene" type="Node2D"]
+script = ExtResource("1_7iygr")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.52, 0.52)
+sprite_frames = SubResource("SpriteFrames_x657y")
+animation = &"1"
+
+[node name="textBox" type="NinePatchRect" parent="."]
+visible = false
+offset_left = -145.0
+offset_top = -234.0
+offset_right = 558.0
+offset_bottom = 469.0
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("17_4cy0m")
+
+[node name="text" type="RichTextLabel" parent="textBox"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = 182.0
+offset_top = 329.923
+offset_right = 501.0
+offset_bottom = 451.923
+rotation = -0.0628319
+theme = ExtResource("18_8pjq0")
+text = "THE FROGS ARE VERY HAPPY"
+autowrap_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]

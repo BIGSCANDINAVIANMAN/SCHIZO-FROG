@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnocpcatrw01e"
-path="res://.godot/imported/8.png-455baae0fd5b1fab5ba7dd1077b9892f.ctex"
+uid="uid://c8m60mlier1my"
+path="res://.godot/imported/2.png-534a8b2bdc101b154e4aa5d1a0d9e330.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cutscene/8.png"
-dest_files=["res://.godot/imported/8.png-455baae0fd5b1fab5ba7dd1077b9892f.ctex"]
+source_file="res://assets/cutscene/2/2.png"
+dest_files=["res://.godot/imported/2.png-534a8b2bdc101b154e4aa5d1a0d9e330.ctex"]
 
 [params]
 
