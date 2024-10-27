@@ -47,7 +47,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 71.686
+radius = 46.6964
 
 [node name="chinese" type="AnimatedSprite2D"]
 scale = Vector2(0.6, 0.6)
@@ -57,14 +57,8 @@ frame = 6
 frame_progress = 1.0
 script = ExtResource("8_o88l3")
 
-[node name="attackTimer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
 [node name="chopstick" type="Area2D" parent="."]
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
 position = Vector2(0, -358.333)
 shape = SubResource("CircleShape2D_x230s")
-
-[connection signal="timeout" from="attackTimer" to="." method="_on_attack_timer_timeout"]

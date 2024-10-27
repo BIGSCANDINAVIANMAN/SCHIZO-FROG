@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dvsih57x8wccx" path="res://assets/JAPAN WITHOUT THE PAN.png" id="2_c8dvj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uok5b"]
-radius = 79.0
+radius = 54.0
 
 [node name="hazard" type="Area2D"]
 script = ExtResource("1_531wo")
@@ -14,16 +14,11 @@ shape = SubResource("CircleShape2D_uok5b")
 
 [node name="sprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.52549)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_c8dvj")
 
 [node name="safeTime" type="Timer" parent="."]
 
-[node name="disappearTime" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="safeTime" to="." method="_on_safe_time_timeout"]
-[connection signal="timeout" from="disappearTime" to="." method="_on_disappear_time_timeout"]

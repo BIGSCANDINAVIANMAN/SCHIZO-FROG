@@ -20,9 +20,3 @@ func _on_body_exited(body: Node2D) -> void:
 func _on_safe_time_timeout() -> void:
 	playerEaten.emit()
 	timer.stop()
-
-func _on_disappear_time_timeout() -> void:
-	var tweener = get_tree().create_tween()
-	tweener.tween_property(self, "modulate", Color(1, 1, 1, 0), 0.5)
-	await tweener.finished
-	queue_free()

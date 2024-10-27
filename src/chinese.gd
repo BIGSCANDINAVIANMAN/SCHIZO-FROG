@@ -1,7 +1,7 @@
 extends AnimatedSprite2D
 
-var armSpan = 300.0
-var visionAngle = 120.0
+var armSpan = 375.0
+var visionAngle = 100.0
 var reactionSpeed = 0.2
 
 var hazard = preload("res://scenes/hazard.tscn")
@@ -12,6 +12,7 @@ var hazard = preload("res://scenes/hazard.tscn")
 func _ready() -> void:
 	animation = "idle"
 	play()
+	attack()
 
 # basically if the player is in the hazard for x sec chinese attack
 # after chinese attack if frog dodges the chopstick he survive
@@ -20,7 +21,7 @@ func attack():
 	var attackPosition = global_position + armSpan * Vector2(cos(angle), sin(angle))
 	var newHazard = hazard.instantiate()
 	newHazard.safeTime = reactionSpeed
-	add_sibling(newHazard)
+	add_sibling.call_deferred(newHazard)
 	newHazard.global_position = attackPosition
 	newHazard.connect("playerEaten", playerEaten)
 
@@ -37,6 +38,3 @@ func playerEaten():
 			main.endGame("eaten")
 	await get_tree().create_timer(0.3).timeout
 	get_tree().create_tween().tween_property(self, "rotation", initialRotation, 0.2)
-
-func _on_attack_timer_timeout() -> void:
-	attack()

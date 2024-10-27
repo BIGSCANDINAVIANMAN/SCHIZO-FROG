@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://src/schizophrenia.gd" id="2_sb4o5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkbne"]
-size = Vector2(55, 57)
+size = Vector2(51.5, 51.5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m40n"]
 atlas = ExtResource("2_j67u5")
@@ -369,6 +369,7 @@ animations = [{
 script = ExtResource("1_uqn3s")
 
 [node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
 shape = SubResource("RectangleShape2D_bkbne")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
