@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
-var accel = 30
-var drag = 0.1
+var accel = 40
+var drag = 0.15
 
 var controls = {
 	"left": "a",

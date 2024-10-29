@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgimpa0su2vdi"
-path="res://.godot/imported/6.png-4d418cb1364f53b57884571f962040fe.ctex"
+uid="uid://sohbvvwc5dkq"
+path="res://.godot/imported/4.png-b29ff402f06b7238888eb3b7a7879de5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/the hungry chinese/attack/6.png"
-dest_files=["res://.godot/imported/6.png-4d418cb1364f53b57884571f962040fe.ctex"]
+source_file="res://assets/the hungry chinese/attack1/4.png"
+dest_files=["res://.godot/imported/4.png-b29ff402f06b7238888eb3b7a7879de5.ctex"]
 
 [params]
 

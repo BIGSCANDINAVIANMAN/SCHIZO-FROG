@@ -3,14 +3,10 @@
 [ext_resource type="Script" path="res://src/main.gd" id="1_hp02j"]
 [ext_resource type="Script" path="res://src/table.gd" id="1_i2ch3"]
 [ext_resource type="PackedScene" uid="uid://bw313ph3mn5vr" path="res://scenes/player.tscn" id="1_oecfp"]
+[ext_resource type="Texture2D" uid="uid://def3c1xxvvslg" path="res://assets/TABLE H.png" id="3_mwml0"]
 [ext_resource type="PackedScene" uid="uid://dn8lar488daha" path="res://scenes/hud.tscn" id="4_s8cje"]
 [ext_resource type="PackedScene" uid="uid://u5xyc5ijr1nq" path="res://scenes/chinese.tscn" id="5_a15qq"]
-
-[sub_resource type="Gradient" id="Gradient_yrfoy"]
-colors = PackedColorArray(0, 0, 0, 1, 0.345098, 0.266667, 0.254902, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_xlq1a"]
-gradient = SubResource("Gradient_yrfoy")
+[ext_resource type="PackedScene" uid="uid://dhr3xj32eii2k" path="res://scenes/glass_spinny.tscn" id="6_qk4qq"]
 
 [sub_resource type="Environment" id="Environment_4tun8"]
 background_mode = 3
@@ -25,13 +21,14 @@ main = NodePath("..")
 
 [node name="tableSprite" type="Sprite2D" parent="table"]
 position = Vector2(-0.769302, -0.833332)
-scale = Vector2(20.7212, 14.6354)
-texture = SubResource("GradientTexture2D_xlq1a")
+scale = Vector2(3, 3)
+texture = ExtResource("3_mwml0")
 
 [node name="collision" type="CollisionPolygon2D" parent="table"]
-polygon = PackedVector2Array(664.615, -459.167, 662.308, 470, 663.077, 552.5, 736.154, 552.5, 740, -560.833, -784.615, -576.667, -774.615, 529.167, 664.615, 558.333, 659.231, 465.833, -661.538, 470, -665.385, -465.833)
+polygon = PackedVector2Array(1237.69, -738.333, 1279.23, 506.667, 663.077, 552.5, 1386.92, 526.667, 1327.69, -795.833, -1226.15, -768.333, -1270, 528.333, 664.615, 558.333, 1271.54, 495, -1176.15, 471.667, -1168.46, -712.5)
 
 [node name="player" parent="." instance=ExtResource("1_oecfp")]
+position = Vector2(-246.154, 0)
 
 [node name="camera" type="Camera2D" parent="player"]
 zoom = Vector2(2, 2)
@@ -47,6 +44,10 @@ environment = SubResource("Environment_4tun8")
 [node name="chinese" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_a15qq")]
 position = Vector2(-581, -19.2369)
 rotation = 1.5708
+player = NodePath("../player")
+
+[node name="glassSpinny" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_qk4qq")]
+position = Vector2(170, -121.667)
 player = NodePath("../player")
 
 [connection signal="body_entered" from="table" to="table" method="_on_body_entered"]

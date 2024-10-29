@@ -87,7 +87,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("16_xeo2m")
 }],
-"loop": true,
+"loop": false,
 "name": &"1",
 "speed": 15.0
 }, {
@@ -163,25 +163,25 @@ script = ExtResource("1_2dafy")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_x657y")
-animation = &"2"
+animation = &"1"
 
 [node name="textBox" type="NinePatchRect" parent="."]
-offset_left = -805.0
-offset_top = -454.0
-offset_right = 1318.0
-offset_bottom = 1156.0
+offset_left = -1025.0
+offset_top = -1149.0
+offset_right = 1098.0
+offset_bottom = 419.0
 texture = ExtResource("1_6omud")
 
 [node name="text" type="RichTextLabel" parent="textBox"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
-offset_left = 538.0
-offset_top = 746.0
-offset_right = 1530.0
-offset_bottom = 937.0
+offset_left = 549.0
+offset_top = 751.0
+offset_right = 1522.0
+offset_bottom = 942.0
 rotation = -0.0628319
 theme = ExtResource("2_6j2mg")
-text = "faefaewfwefaweiufhalwiuefh lawie hf lawhfl awufh la"
+text = "frogs frogs frogs frogs frogs frogs frogs frogs frogs frogs "
 autowrap_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]

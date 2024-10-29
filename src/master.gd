@@ -26,6 +26,15 @@ func startGame():
 
 func _on_start_button_pressed() -> void:
 	var cutsceneInstance = cutscene.instantiate()
+	
+	var tweener = get_tree().create_tween()
+	tweener.tween_property($Screen, "modulate", Color(0, 0, 0), 0.5)
+	await tweener.finished
+	
 	add_child(cutsceneInstance)
 	cutsceneInstance.connect("finished", startGame)
 	$Screen.queue_free()
+	
+	cutsceneInstance.modulate = Color(0, 0, 0)
+	var tweener2 = get_tree().create_tween()
+	tweener2.tween_property(cutsceneInstance, "modulate", Color(1, 1, 1), 0.5)

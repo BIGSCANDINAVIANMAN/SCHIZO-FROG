@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhr3xj32eii2k"]
+
+[ext_resource type="Texture2D" uid="uid://dvsih57x8wccx" path="res://assets/JAPAN WITHOUT THE PAN.png" id="1_0bdie"]
+[ext_resource type="Script" path="res://src/glass_spinny.gd" id="1_oj40v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eanoc"]
+radius = 404.061
+
+[node name="glassSpinny" type="Area2D"]
+script = ExtResource("1_oj40v")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eanoc")
+
+[node name="sprite" type="Sprite2D" parent="."]
+modulate = Color(0, 1, 1, 0.219608)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_0bdie")

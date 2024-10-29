@@ -1,37 +1,42 @@
-[gd_scene load_steps=11 format=3 uid="uid://u5xyc5ijr1nq"]
+[gd_scene load_steps=16 format=3 uid="uid://u5xyc5ijr1nq"]
 
-[ext_resource type="Texture2D" uid="uid://d3ms5n0fc84pg" path="res://assets/the hungry chinese/attack/1.png" id="1_sm27d"]
-[ext_resource type="Texture2D" uid="uid://cpm60fllvr5tw" path="res://assets/the hungry chinese/attack/2.png" id="2_qjvux"]
-[ext_resource type="Texture2D" uid="uid://cp6rvraaa676w" path="res://assets/the hungry chinese/attack/3.png" id="3_1ath7"]
-[ext_resource type="Texture2D" uid="uid://sohbvvwc5dkq" path="res://assets/the hungry chinese/attack/4.png" id="4_718dh"]
-[ext_resource type="Texture2D" uid="uid://dy8qq0o5vjtxr" path="res://assets/the hungry chinese/attack/5.png" id="5_3dn6p"]
-[ext_resource type="Texture2D" uid="uid://bgimpa0su2vdi" path="res://assets/the hungry chinese/attack/6.png" id="6_xo8gu"]
-[ext_resource type="Texture2D" uid="uid://dxls6uvxgsuvs" path="res://assets/the hungry chinese/attack/7.png" id="7_4p26h"]
+[ext_resource type="Texture2D" uid="uid://d3ms5n0fc84pg" path="res://assets/the hungry chinese/attack1/1.png" id="1_rrifl"]
+[ext_resource type="Texture2D" uid="uid://cpm60fllvr5tw" path="res://assets/the hungry chinese/attack1/2.png" id="2_44gmt"]
+[ext_resource type="Texture2D" uid="uid://cp6rvraaa676w" path="res://assets/the hungry chinese/attack1/3.png" id="3_x5ih7"]
+[ext_resource type="Texture2D" uid="uid://sohbvvwc5dkq" path="res://assets/the hungry chinese/attack1/4.png" id="4_yl86h"]
+[ext_resource type="Texture2D" uid="uid://dy8qq0o5vjtxr" path="res://assets/the hungry chinese/attack1/5.png" id="5_68870"]
+[ext_resource type="Texture2D" uid="uid://bgimpa0su2vdi" path="res://assets/the hungry chinese/attack1/6.png" id="6_ru8ia"]
+[ext_resource type="Texture2D" uid="uid://dxls6uvxgsuvs" path="res://assets/the hungry chinese/attack1/7.png" id="7_efxdi"]
+[ext_resource type="Texture2D" uid="uid://dpe3k8dyhk3je" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-9.png" id="8_1e8t1"]
 [ext_resource type="Script" path="res://src/chinese.gd" id="8_o88l3"]
+[ext_resource type="Texture2D" uid="uid://bt6g1wakawsy0" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-8.png" id="9_1a6ob"]
+[ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="9_3rbcj"]
+[ext_resource type="Texture2D" uid="uid://cfiwqw2ofngj1" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-6.png" id="10_nkdp5"]
+[ext_resource type="Texture2D" uid="uid://dyd84a3x4ry0k" path="res://assets/the hungry chinese/attack2/1.png" id="11_65eje"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f008g"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_sm27d")
+"texture": ExtResource("1_rrifl")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_qjvux")
+"texture": ExtResource("2_44gmt")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_1ath7")
+"texture": ExtResource("3_x5ih7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_718dh")
+"texture": ExtResource("4_yl86h")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_3dn6p")
+"texture": ExtResource("5_68870")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_xo8gu")
+"texture": ExtResource("6_ru8ia")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_4p26h")
+"texture": ExtResource("7_efxdi")
 }],
 "loop": false,
 "name": &"attack",
@@ -39,7 +44,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_sm27d")
+"texture": ExtResource("8_1e8t1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1a6ob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_nkdp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_65eje")
+}],
+"loop": true,
+"name": &"attack2",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_rrifl")
 }],
 "loop": true,
 "name": &"idle",
@@ -47,18 +69,21 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 46.6964
+radius = 33.3333
 
 [node name="chinese" type="AnimatedSprite2D"]
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_f008g")
 animation = &"attack"
-frame = 6
-frame_progress = 1.0
 script = ExtResource("8_o88l3")
 
 [node name="chopstick" type="Area2D" parent="."]
+position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(0, -358.333)
+position = Vector2(-18.3333, -386.667)
 shape = SubResource("CircleShape2D_x230s")
+
+[node name="hazard" parent="." instance=ExtResource("9_3rbcj")]
+
+[connection signal="playerEaten" from="hazard" to="." method="_on_hazard_player_eaten"]

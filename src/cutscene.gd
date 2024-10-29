@@ -10,7 +10,7 @@ var sceneInfo = [
 	[],
 	["Once upon a time, in 21st century China, along a gentle river creek…", 
 	"There sat a schizophrenic frog and its family.", "They lived a simple life. "],
-	["but then the ccp came and ate their hopes and dreams"],
+	["Until one fateful day, a net swooshed in and caught the poor frog family. "],
 	["END"]
 ]
 

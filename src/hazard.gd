@@ -6,8 +6,8 @@ var safeTime = 1
 
 signal playerEaten
 
-func _ready() -> void:
-	timer.wait_time = safeTime
+func setWaitTime(time):
+	timer.wait_time = time
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
