@@ -81,7 +81,7 @@ script = ExtResource("8_o88l3")
 position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(-18.3333, -386.667)
+position = Vector2(-18.3333, -346.667)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("9_3rbcj")]

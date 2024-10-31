@@ -1,10 +1,31 @@
-[gd_scene load_steps=2 format=3 uid="uid://cncag2npxjtwf"]
+[gd_scene load_steps=3 format=3 uid="uid://cncag2npxjtwf"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_hlf53"]
-custom_solver_bias = 1.0
-radius = 156.013
+[ext_resource type="Texture2D" uid="uid://do44hcbmfbr83" path="res://assets/Plates/1.png" id="1_3qbr4"]
 
-[node name="plate" type="StaticBody2D"]
+[sub_resource type="GDScript" id="GDScript_ipsvh"]
+resource_name = "plate"
+script/source = "extends CharacterBody2D
 
-[node name="collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_hlf53")
+@export var texture = 0
+
+var textureInfo= {
+	0: \"res://assets/Plates/1.png\",
+	1: \"res://assets/Plates/2.png\",
+	2: \"res://assets/Plates/3.png\"
+}
+
+func _ready() -> void:
+	$sprite.texture = load(textureInfo[texture])
+"
+
+[node name="plate" type="CharacterBody2D"]
+script = SubResource("GDScript_ipsvh")
+
+[node name="sprite" type="Sprite2D" parent="."]
+position = Vector2(-8, 8)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_3qbr4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.85, 0.85)
+polygon = PackedVector2Array(140, -1.17647, 115.294, -81.1765, 50.5882, -132.941, -31.7647, -138.824, -101, -105, -130.588, -54.1176, -144, 3, -133, 57, -101, 103, -43, 134, 25.8824, 140, 84, 117, 126, 70)

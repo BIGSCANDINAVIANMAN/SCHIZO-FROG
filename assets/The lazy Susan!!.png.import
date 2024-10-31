@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://def3c1xxvvslg"
-path="res://.godot/imported/TABLE H.png-40786e8713d489b24ae9c10cf86a6fd8.ctex"
+uid="uid://doyggq3ylsufy"
+path="res://.godot/imported/The lazy Susan!!.png-b36f6cfc6cff9db9f941447d7eb5029c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/TABLE H.png"
-dest_files=["res://.godot/imported/TABLE H.png-40786e8713d489b24ae9c10cf86a6fd8.ctex"]
+source_file="res://assets/The lazy Susan!!.png"
+dest_files=["res://.godot/imported/The lazy Susan!!.png-b36f6cfc6cff9db9f941447d7eb5029c.ctex"]
 
 [params]
 

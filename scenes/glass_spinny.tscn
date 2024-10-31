@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhr3xj32eii2k"]
 
-[ext_resource type="Texture2D" uid="uid://dvsih57x8wccx" path="res://assets/JAPAN WITHOUT THE PAN.png" id="1_0bdie"]
 [ext_resource type="Script" path="res://src/glass_spinny.gd" id="1_oj40v"]
+[ext_resource type="Texture2D" uid="uid://doyggq3ylsufy" path="res://assets/The lazy Susan!!.png" id="2_2et0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eanoc"]
-radius = 404.061
+radius = 367.022
 
 [node name="glassSpinny" type="Area2D"]
 script = ExtResource("1_oj40v")
@@ -13,6 +13,5 @@ script = ExtResource("1_oj40v")
 shape = SubResource("CircleShape2D_eanoc")
 
 [node name="sprite" type="Sprite2D" parent="."]
-modulate = Color(0, 1, 1, 0.219608)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("1_0bdie")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2et0h")
