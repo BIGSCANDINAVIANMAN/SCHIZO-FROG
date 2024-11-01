@@ -1,30 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cncag2npxjtwf"]
-
-[ext_resource type="Texture2D" uid="uid://do44hcbmfbr83" path="res://assets/Plates/1.png" id="1_3qbr4"]
-
-[sub_resource type="GDScript" id="GDScript_ipsvh"]
-resource_name = "plate"
-script/source = "extends CharacterBody2D
-
-@export var texture = 0
-
-var textureInfo= {
-	0: \"res://assets/Plates/1.png\",
-	1: \"res://assets/Plates/2.png\",
-	2: \"res://assets/Plates/3.png\"
-}
-
-func _ready() -> void:
-	$sprite.texture = load(textureInfo[texture])
-"
+[gd_scene format=3 uid="uid://cncag2npxjtwf"]
 
 [node name="plate" type="CharacterBody2D"]
-script = SubResource("GDScript_ipsvh")
-
-[node name="sprite" type="Sprite2D" parent="."]
-position = Vector2(-8, 8)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_3qbr4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.85, 0.85)

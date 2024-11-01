@@ -13,10 +13,11 @@ func pause():
 	get_tree().paused = !get_tree().paused
 
 func _on_main_game_over(result) -> void:
+	print(result)
 	if result == "eaten":
-		add_child(eatenScene.instantiate())
+		call_deferred("add_child", eatenScene.instantiate())
 	elif result == "escaped":
-		add_child(escapedScene.instantiate())
+		call_deferred("add_child", escapedScene.instantiate())
 	$main.queue_free()
 
 func startGame():

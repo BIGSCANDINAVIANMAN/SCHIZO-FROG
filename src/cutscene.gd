@@ -8,9 +8,10 @@ var currentScene = 0
 var currentIndex = -1
 var sceneInfo = [
 	[],
-	["Once upon a time, in 21st century China, along a gentle river creek…", 
-	"There sat a schizophrenic frog and its family.", "They lived a simple life. "],
+	["Once upon a time, along a gentle river creek, there sat a schizophrenic frog and its family.", "they lived a simple life."], 
 	["Until one fateful day, a net swooshed in and caught the poor frog family. "],
+	["They were carried to the kitchen and one by one the frog watched as its friends got fried, stir-fried, roasted and grilled."],
+	["Just as the unfortunate frog was also about to be cooked, its schizophrenia kicked in...", "in the chaos of its hallucinations, the frog made its escape, leaping onto the dinner table, escaping the hell of being cooked in a restaurant..."], 
 	["END"]
 ]
 
@@ -41,4 +42,4 @@ func displayText(text):
 	textBox.visible = true
 	textBox.get_child(0).text = text
 	textBox.get_child(0).visible_ratio = 0
-	get_tree().create_tween().tween_property($textBox/text, "visible_ratio", 1, len(text)/30.0)
+	get_tree().create_tween().tween_property($textBox/text, "visible_ratio", 1, len(text)/40.0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b1dno75wgj3kv"]
+[gd_scene load_steps=42 format=3 uid="uid://b1dno75wgj3kv"]
 
 [ext_resource type="Script" path="res://src/cutscene.gd" id="1_2dafy"]
 [ext_resource type="Texture2D" uid="uid://bqg4ukil6v24x" path="res://assets/textBox.png" id="1_6omud"]
@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://dpjmuf0ekodan" path="res://assets/cutscene/2/19.png" id="34_aivsw"]
 [ext_resource type="Texture2D" uid="uid://b06ycf7pn6sdx" path="res://assets/cutscene/2/20.png" id="35_kpdpl"]
 [ext_resource type="Texture2D" uid="uid://ca0p404n456ok" path="res://assets/cutscene/2/21.png" id="36_swk51"]
+[ext_resource type="Texture2D" uid="uid://do44hcbmfbr83" path="res://assets/Plates/1.png" id="37_lmb1s"]
+[ext_resource type="Texture2D" uid="uid://dmjkq3kbsqv50" path="res://assets/Plates/2.png" id="38_1ehtl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x657y"]
 animations = [{
@@ -155,6 +157,22 @@ animations = [{
 "loop": false,
 "name": &"2",
 "speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_lmb1s")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_1ehtl")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
 }]
 
 [node name="cutscene" type="Node2D"]
@@ -167,21 +185,21 @@ animation = &"1"
 
 [node name="textBox" type="NinePatchRect" parent="."]
 offset_left = -1025.0
-offset_top = -1149.0
+offset_top = -1173.0
 offset_right = 1098.0
-offset_bottom = 419.0
+offset_bottom = 467.0
 texture = ExtResource("1_6omud")
 
 [node name="text" type="RichTextLabel" parent="textBox"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 549.0
-offset_top = 751.0
+offset_top = 778.0
 offset_right = 1522.0
-offset_bottom = 942.0
+offset_bottom = 969.0
 rotation = -0.0628319
 theme = ExtResource("2_6j2mg")
-text = "frogs frogs frogs frogs frogs frogs frogs frogs frogs frogs "
+text = "frogs frogs frogs frogs frogs frogs frogs frogs frogs frogs  frogs frogs  frogs frogs  frogs frogs "
 autowrap_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
