@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ufjjjiu3bscx"]
+
+[ext_resource type="Shader" uid="uid://cyxprxgkjff0i" path="res://main.tres" id="1_umfim"]
+
+[resource]
+shader = ExtResource("1_umfim")
+shader_parameter/intensity = -1.0

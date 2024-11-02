@@ -49,6 +49,7 @@ func switchLeftRight():
 		player.controls["left"] = "d"
 		player.controls["right"] = "a"
 	isLeftRightSchizo = !isLeftRightSchizo
+	pulseOverlay(Color(1, 0, 0))
 
 func switchUpDown():
 	if isUpDownSchizo:
@@ -58,6 +59,7 @@ func switchUpDown():
 		player.controls["up"] = "s"
 		player.controls["down"] = "w"
 	isUpDownSchizo = !isUpDownSchizo
+	pulseOverlay(Color(0, 1, 0))
 
 func sonic(sonicVelocity):
 	dashed.emit()
@@ -74,10 +76,21 @@ func teleport(teleportRadius):
 	var angle = randi_range(0, 7) * PI / 4
 	teleported.emit()
 	player.frozen = true
+	$"../collision".disabled = true
 	await get_tree().create_timer(0.4).timeout
 	player.global_position += teleportRadius * Vector2(cos(angle), sin(angle))
 	await get_tree().create_timer(0.4).timeout
 	player.frozen = false
+	$"../collision".disabled = false
+
+func pulseOverlay(color: Color):
+	var shader = load("res://shaderMaterial.tres")
+	var overlay = $"../overlay"
+	shader.set_shader_parameter("intensity", 0.3)
+	while shader.get_shader_parameter("intensity") > -1:
+		await get_tree().create_timer(0.01).timeout
+		var newOpacity = shader.get_shader_parameter("intensity") - 0.025
+		shader.set_shader_parameter("intensity", newOpacity)
 
 # cooldown stuff this was supposed to be in a status class but um
 

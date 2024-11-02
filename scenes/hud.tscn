@@ -30,5 +30,7 @@ bbcode_enabled = true
 text = " [center]00:00[center]"
 
 [node name="gameTimer" type="Timer" parent="."]
-wait_time = 120.0
+wait_time = 60.0
 autostart = true
+
+[connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]

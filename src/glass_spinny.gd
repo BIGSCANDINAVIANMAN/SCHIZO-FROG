@@ -1,7 +1,7 @@
 extends Area2D
 
 @export var player: Player
-var speed = 0.097
+var speed = 0.06
 
 func _physics_process(delta: float) -> void:
 	if inPlayer():
@@ -11,6 +11,7 @@ func _physics_process(delta: float) -> void:
 	for plate in getPlates():
 		var additionalVelocity = (plate.global_position - global_position).orthogonal() * speed
 		plate.velocity = additionalVelocity * 5
+		plate.rotation = (plate.global_position - global_position).angle()
 		plate.move_and_slide()
 
 func inPlayer() -> bool:
