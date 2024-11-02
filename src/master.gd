@@ -13,7 +13,6 @@ func pause():
 	get_tree().paused = !get_tree().paused
 
 func _on_main_game_over(result) -> void:
-	print(result)
 	if result == "eaten":
 		call_deferred("add_child", eatenScene.instantiate())
 	elif result == "escaped":

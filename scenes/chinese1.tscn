@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dy8qq0o5vjtxr" path="res://assets/the hungry chinese/attack1/5.png" id="5_68870"]
 [ext_resource type="Texture2D" uid="uid://bgimpa0su2vdi" path="res://assets/the hungry chinese/attack1/6.png" id="6_ru8ia"]
 [ext_resource type="Texture2D" uid="uid://dxls6uvxgsuvs" path="res://assets/the hungry chinese/attack1/7.png" id="7_efxdi"]
-[ext_resource type="Script" path="res://src/chinese.gd" id="8_o88l3"]
+[ext_resource type="Script" path="res://src/chinese1.gd" id="8_i3rqy"]
 [ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="9_3rbcj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f008g"]
@@ -56,7 +56,7 @@ sprite_frames = SubResource("SpriteFrames_f008g")
 animation = &"attack"
 frame = 6
 frame_progress = 1.0
-script = ExtResource("8_o88l3")
+script = ExtResource("8_i3rqy")
 
 [node name="chopstick" type="Area2D" parent="."]
 position = Vector2(0, 13.3333)

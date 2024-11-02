@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://68w5cpsdt4ox"]
 
+[ext_resource type="Script" path="res://src/chinese2.gd" id="5_bygpw"]
 [ext_resource type="Texture2D" uid="uid://cfiwqw2ofngj1" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-6.png" id="8_xgdno"]
 [ext_resource type="Texture2D" uid="uid://bt6g1wakawsy0" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-8.png" id="9_tstrt"]
 [ext_resource type="Texture2D" uid="uid://dpe3k8dyhk3je" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-9.png" id="10_quymf"]
 [ext_resource type="Texture2D" uid="uid://dyd84a3x4ry0k" path="res://assets/the hungry chinese/attack2/1.png" id="11_bfm7w"]
-[ext_resource type="Script" path="res://src/chinese.gd" id="12_iwpd5"]
 [ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="13_tajqk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f008g"]
@@ -14,23 +14,23 @@ animations = [{
 "texture": ExtResource("8_xgdno")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_tstrt")
+"texture": ExtResource("11_bfm7w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_quymf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_tstrt")
+"texture": ExtResource("11_bfm7w")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_xgdno")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_bfm7w")
+"texture": ExtResource("9_tstrt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_quymf")
 }],
 "loop": false,
 "name": &"attack",
-"speed": 12.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -47,8 +47,10 @@ radius = 33.3333
 [node name="chinese2" type="AnimatedSprite2D"]
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_f008g")
-animation = &"idle"
-script = ExtResource("12_iwpd5")
+animation = &"attack"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("5_bygpw")
 
 [node name="chopstick" type="Area2D" parent="."]
 position = Vector2(0, 13.3333)
@@ -58,6 +60,5 @@ position = Vector2(-1.66667, -321.667)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("13_tajqk")]
-scale = Vector2(1.2, 1.2)
 
 [connection signal="playerEaten" from="hazard" to="." method="_on_hazard_player_eaten"]

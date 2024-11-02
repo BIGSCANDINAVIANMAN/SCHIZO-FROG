@@ -1,29 +1,33 @@
 extends AnimatedSprite2D
+class_name Chinese
 
-var armSpan = 375.0
-var visionAngle = 100.0
 var reactionSpeed = 0.2
+var captureTime = 0
 
 @export var player: Player
 @onready var main = player.get_parent()
 @onready var initialRotation = rotation
 
-func _ready() -> void:
-	animation = "idle"
-	play()
-	$hazard.setWaitTime(reactionSpeed)
+func setCaptureTime(time):
+	captureTime = time
 
 func eatPlayer():
-	animation = "attack"
 	var finalRotation = PI / 2 + (player.global_position - global_position).angle()
-	get_tree().create_tween().tween_property(self, "rotation", finalRotation, 0.2)
-	play()
-	await animation_finished
+	var tweener = get_tree().create_tween()
+	tweener.tween_property(self, "rotation", finalRotation, 0.2 * abs(finalRotation - rotation)).finished
+	await tweener.finished
+	play("attack")
+	if captureTime:
+		await get_tree().create_timer(captureTime).timeout
 	if $chopstick.overlaps_body(player):
 		if $chopstick.overlaps_body(player): 
+			player.visible = false
+			player.frozen = true
+			await animation_finished
+			await get_tree().create_timer(0.5).timeout
 			main.endGame("eaten")
 			return
-	await get_tree().create_timer(0.3).timeout
+	await animation_finished
 	get_tree().create_tween().tween_property(self, "rotation", initialRotation, 0.2)
 
 func _on_hazard_player_eaten() -> void:
