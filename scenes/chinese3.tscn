@@ -33,7 +33,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 33.3333
+radius = 20.0
 
 [node name="chinese3" type="AnimatedSprite2D"]
 scale = Vector2(0.6, 0.6)

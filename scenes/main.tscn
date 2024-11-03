@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://djngikrrlnlm5"]
+[gd_scene load_steps=16 format=3 uid="uid://djngikrrlnlm5"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_hp02j"]
 [ext_resource type="Script" path="res://src/table.gd" id="1_i2ch3"]
@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://do44hcbmfbr83" path="res://assets/Plates/1.png" id="6_wqopu"]
 [ext_resource type="PackedScene" uid="uid://cncag2npxjtwf" path="res://scenes/plate.tscn" id="7_nrv2k"]
 [ext_resource type="Texture2D" uid="uid://dmjkq3kbsqv50" path="res://assets/Plates/2.png" id="9_ktivp"]
+[ext_resource type="Texture2D" uid="uid://claey05pnkw3a" path="res://assets/Plates/3.png" id="10_fmgxl"]
 [ext_resource type="PackedScene" uid="uid://u5xyc5ijr1nq" path="res://scenes/chinese1.tscn" id="10_lishg"]
 [ext_resource type="PackedScene" uid="uid://68w5cpsdt4ox" path="res://scenes/chinese2.tscn" id="11_cytya"]
+[ext_resource type="PackedScene" uid="uid://ctpmv2o35g1gt" path="res://scenes/chinese3.tscn" id="12_yreli"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6rmbc"]
 radius = 1013.16
@@ -36,7 +38,7 @@ texture = ExtResource("3_hgs7p")
 [node name="outerTable" type="Area2D" parent="table"]
 
 [node name="collision" type="CollisionShape2D" parent="table/outerTable"]
-scale = Vector2(1.25, 1.25)
+scale = Vector2(1.5, 1.5)
 shape = SubResource("CircleShape2D_6rmbc")
 
 [node name="tableSprite" type="Sprite2D" parent="table/outerTable"]
@@ -99,7 +101,7 @@ scale = Vector2(1, 1)
 [node name="sprite" type="Sprite2D" parent="plates/plate4"]
 position = Vector2(-8, 8)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("6_wqopu")
+texture = ExtResource("10_fmgxl")
 
 [node name="plate5" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(-703.846, 390.833)
@@ -118,6 +120,15 @@ scale = Vector2(1, 1)
 position = Vector2(-8, -12)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_ktivp")
+
+[node name="plate7" parent="plates" instance=ExtResource("7_nrv2k")]
+position = Vector2(-129.231, -326.667)
+scale = Vector2(1, 1)
+
+[node name="sprite" type="Sprite2D" parent="plates/plate7"]
+position = Vector2(-8, -12)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_fmgxl")
 
 [node name="plate8" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(600, 300)
@@ -138,7 +149,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("9_ktivp")
 
 [node name="plate10" parent="plates" instance=ExtResource("7_nrv2k")]
-position = Vector2(9.53674e-07, -807.499)
+position = Vector2(-200, -865)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate10"]
@@ -153,7 +164,7 @@ scale = Vector2(1, 1)
 [node name="sprite" type="Sprite2D" parent="plates/plate11"]
 position = Vector2(-8, -12)
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("9_ktivp")
+texture = ExtResource("10_fmgxl")
 
 [node name="plate12" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(800, -127.5)
@@ -170,8 +181,28 @@ rotation = 1.5708
 player = NodePath("../player")
 
 [node name="chinese2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
-position = Vector2(-724.686, 485.18)
+position = Vector2(-727.684, 485)
 rotation = 1.1973
+player = NodePath("../player")
+
+[node name="chinese3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
+position = Vector2(-756.118, -497.686)
+rotation = 2.33351
+player = NodePath("../player")
+
+[node name="chinese4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
+position = Vector2(321.057, -878.542)
+rotation = 3.60585
+player = NodePath("../player")
+
+[node name="chinese5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
+position = Vector2(-214.803, -873.653)
+rotation = 2.75413
+player = NodePath("../player")
+
+[node name="chinese6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
+position = Vector2(870.216, -260.151)
+rotation = 4.30747
 player = NodePath("../player")
 
 [connection signal="body_exited" from="table" to="table" method="_on_body_exited"]

@@ -9,10 +9,9 @@ func _physics_process(delta: float) -> void:
 		player.velocity += additionalVelocity
 	
 	for plate in getPlates():
-		var additionalVelocity = (plate.global_position - global_position).orthogonal() * speed
-		plate.velocity = additionalVelocity * 5
+		var additionalVelocity = 0.1 * (plate.global_position - global_position).orthogonal() * speed
 		plate.rotation = (plate.global_position - global_position).angle()
-		plate.move_and_slide()
+		plate.global_position += additionalVelocity
 
 func inPlayer() -> bool:
 	return get_overlapping_bodies().has(player)

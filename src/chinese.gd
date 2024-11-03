@@ -7,6 +7,8 @@ var captureTime = 0
 @export var player: Player
 @onready var main = player.get_parent()
 @onready var initialRotation = rotation
+var hazard: Area2D
+var chopstickArea: Area2D
 
 func setCaptureTime(time):
 	captureTime = time
@@ -28,7 +30,9 @@ func eatPlayer():
 			main.endGame("eaten")
 			return
 	await animation_finished
-	get_tree().create_tween().tween_property(self, "rotation", initialRotation, 0.2)
+	await get_tree().create_tween().tween_property(self, "rotation", initialRotation, 0.2).finished
+	if hazard.overlaps_body(player):
+		eatPlayer()
 
 func _on_hazard_player_eaten() -> void:
 	eatPlayer()

@@ -5,3 +5,5 @@ func _ready() -> void:
 	animation = "idle"
 	play()
 	$hazard.setWaitTime(reactionSpeed)
+	hazard = $hazard
+	chopstickArea = $chopstick

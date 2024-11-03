@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://doyggq3ylsufy" path="res://assets/The lazy Susan!!.png" id="2_2et0h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eanoc"]
-radius = 399.0
+radius = 376.001
 
 [node name="glassSpinny" type="Area2D"]
 script = ExtResource("1_oj40v")

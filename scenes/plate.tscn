@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cncag2npxjtwf"]
 
-[node name="plate" type="CharacterBody2D"]
+[node name="plate" type="AnimatableBody2D"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.85, 0.85)
