@@ -26,7 +26,7 @@ func _physics_process(_delta: float) -> void:
 	
 	for ability in activeAbilities:
 		if shouldActivate(ability):
-			startTimer(ability, 2)
+			startTimer(ability, 0.2)
 
 # abilities dict formatted as {"abilityname": "input"}
 # abilities not stated in dict set to false (inactive)
@@ -71,9 +71,10 @@ func antiSonic(antiSonicFactor):
 	await get_tree().create_timer(1).timeout
 	player.accel = initialAccel
 
-# 0.3 sec for each half of the teleport
 func teleport(teleportRadius): 
-	var angle = randi_range(0, 7) * PI / 4
+	var angle = randi_range(0, 2 * PI)
+	while !canTeleport(teleportRadius * Vector2(cos(angle), sin(angle))):
+		angle = randi_range(0, 2 * PI)
 	teleported.emit()
 	player.frozen = true
 	$"../collision".disabled = true
@@ -82,6 +83,14 @@ func teleport(teleportRadius):
 	await get_tree().create_timer(0.4).timeout
 	player.frozen = false
 	$"../collision".disabled = false
+
+func canTeleport(position):
+	var testArea = $"../testArea"
+	testArea.global_position = position
+	for body in testArea.get_overlapping_bodies():
+		if body.name.contains("plate"):
+			return false
+	return true
 
 func pulseOverlay(color: Color):
 	var shader = load("res://shaderMaterial.tres")

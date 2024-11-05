@@ -1,17 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqai1jwqdvcg6"]
+[gd_scene load_steps=2 format=3 uid="uid://cqai1jwqdvcg6"]
 
 [ext_resource type="Script" path="res://src/hazard.gd" id="1_531wo"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_uok5b"]
-radius = 386.001
 
 [node name="hazard" type="Area2D"]
 script = ExtResource("1_531wo")
 
-[node name="collision" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_uok5b")
-
 [node name="safeTime" type="Timer" parent="."]
+
+[node name="collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(2, 179, -367, -112, -333, -191, -266, -280, -197, -339, -101, -378, -1, -385, 103, -369, 195, -332, 271, -277, 331, -199, 370, -103)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

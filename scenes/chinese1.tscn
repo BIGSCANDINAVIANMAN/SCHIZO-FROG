@@ -48,7 +48,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 33.3333
+radius = 21.7307
 
 [node name="chinese1" type="AnimatedSprite2D"]
 scale = Vector2(0.6, 0.6)
@@ -62,10 +62,17 @@ script = ExtResource("8_i3rqy")
 position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(-1.66667, -388.333)
+position = Vector2(-6.66667, -388.333)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("9_3rbcj")]
 scale = Vector2(1.2, 1.2)
+
+[node name="staticBody" type="StaticBody2D" parent="."]
+
+[node name="collision2" type="CollisionPolygon2D" parent="staticBody"]
+position = Vector2(2.08165e-12, -70)
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(76.1905, 328.571, 26.1905, 247.619, -57.1429, 190.476, -135.714, 192.857, -211.905, 192.857, -266.667, 235.714, -311.905, 309.524, -326.19, 366.667, -323.809, 402.381, -409.524, 402.381, -480.952, 433.333, -476.19, 504.762, -452.381, 561.905, -211.905, 564.286, -123.81, 597.619, -11.9048, 561.905, 107.143, 564.286, 183.333, 530.952, 228.571, 464.286, 252.381, 300, 104.762, 264.286)
 
 [connection signal="playerEaten" from="hazard" to="." method="_on_hazard_player_eaten"]

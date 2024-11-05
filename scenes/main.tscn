@@ -99,8 +99,8 @@ position = Vector2(537.692, -600.833)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate4"]
-position = Vector2(-8, 8)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-4.15381, -0.333374)
+scale = Vector2(0.23, 0.23)
 texture = ExtResource("10_fmgxl")
 
 [node name="plate5" parent="plates" instance=ExtResource("7_nrv2k")]
@@ -108,8 +108,8 @@ position = Vector2(-703.846, 390.833)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate5"]
-position = Vector2(-8, 8)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-10.3071, -9.49957)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
 
 [node name="plate6" parent="plates" instance=ExtResource("7_nrv2k")]
@@ -117,17 +117,17 @@ position = Vector2(190.769, -300)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate6"]
-position = Vector2(-8, -12)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-10.3071, -9.49957)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
 
 [node name="plate7" parent="plates" instance=ExtResource("7_nrv2k")]
-position = Vector2(-129.231, -326.667)
+position = Vector2(-178.462, -306.667)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate7"]
-position = Vector2(-8, -12)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-4.15381, -0.333374)
+scale = Vector2(0.23, 0.23)
 texture = ExtResource("10_fmgxl")
 
 [node name="plate8" parent="plates" instance=ExtResource("7_nrv2k")]
@@ -135,8 +135,8 @@ position = Vector2(600, 300)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate8"]
-position = Vector2(-8, -12)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-10.3071, -9.49957)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
 
 [node name="plate9" parent="plates" instance=ExtResource("7_nrv2k")]
@@ -144,8 +144,8 @@ position = Vector2(249.231, 246.666)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate9"]
-position = Vector2(-8, -12)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-10.3071, -9.49957)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
 
 [node name="plate10" parent="plates" instance=ExtResource("7_nrv2k")]
@@ -153,8 +153,8 @@ position = Vector2(-200, -865)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate10"]
-position = Vector2(-8, -12)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-10.3071, -9.49957)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
 
 [node name="plate11" parent="plates" instance=ExtResource("7_nrv2k")]
@@ -162,8 +162,8 @@ position = Vector2(-100, 700)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate11"]
-position = Vector2(-8, -12)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-4.15381, -0.333374)
+scale = Vector2(0.23, 0.23)
 texture = ExtResource("10_fmgxl")
 
 [node name="plate12" parent="plates" instance=ExtResource("7_nrv2k")]
@@ -171,38 +171,61 @@ position = Vector2(800, -127.5)
 scale = Vector2(1, 1)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate12"]
-position = Vector2(-8, -12)
-scale = Vector2(0.25, 0.25)
+position = Vector2(-10.3071, -9.49957)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
 
-[node name="chinese1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
+[node name="chineses" type="Node2D" parent="."]
+
+[node name="chinese1" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
 position = Vector2(-899.486, 42.6282)
 rotation = 1.5708
-player = NodePath("../player")
+scale = Vector2(0.6, 0.6)
+player = NodePath("../../player")
 
-[node name="chinese2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
+[node name="chinese2" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
 position = Vector2(-727.684, 485)
 rotation = 1.1973
-player = NodePath("../player")
+scale = Vector2(0.6, 0.6)
+player = NodePath("../../player")
 
-[node name="chinese3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
+[node name="chinese3" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
 position = Vector2(-756.118, -497.686)
 rotation = 2.33351
-player = NodePath("../player")
+player = NodePath("../../player")
 
-[node name="chinese4" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
+[node name="chinese4" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
 position = Vector2(321.057, -878.542)
-rotation = 3.60585
-player = NodePath("../player")
+rotation = -2.8571
+player = NodePath("../../player")
 
-[node name="chinese5" parent="." node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
+[node name="chinese5" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
 position = Vector2(-214.803, -873.653)
 rotation = 2.75413
-player = NodePath("../player")
+scale = Vector2(0.6, 0.6)
+player = NodePath("../../player")
 
-[node name="chinese6" parent="." node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
+[node name="chinese6" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
 position = Vector2(870.216, -260.151)
-rotation = 4.30747
-player = NodePath("../player")
+rotation = -1.85703
+scale = Vector2(0.6, 0.6)
+player = NodePath("../../player")
+
+[node name="chinese7" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
+position = Vector2(531.046, 722.733)
+rotation = -0.403171
+player = NodePath("../../player")
+
+[node name="chinese8" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
+position = Vector2(-122.549, 847.556)
+rotation = 0.240855
+scale = Vector2(0.6, 0.6)
+player = NodePath("../../player")
+
+[node name="chinese9" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
+position = Vector2(851.682, 239.465)
+rotation = -1.1973
+scale = Vector2(0.6, 0.6)
+player = NodePath("../../player")
 
 [connection signal="body_exited" from="table" to="table" method="_on_body_exited"]

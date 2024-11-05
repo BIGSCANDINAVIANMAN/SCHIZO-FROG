@@ -365,7 +365,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkbne"]
-size = Vector2(48.75, 44)
+size = Vector2(51, 51)
 
 [sub_resource type="Gradient" id="Gradient_r1mqh"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
@@ -406,6 +406,12 @@ texture = ExtResource("6_m5lv5")
 z_index = 50
 material = ExtResource("7_5omag")
 texture = SubResource("GradientTexture2D_5tnte")
+
+[node name="testArea" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="testArea"]
+position = Vector2(2.5, -8.5)
+shape = SubResource("RectangleShape2D_bkbne")
 
 [connection signal="dashed" from="schizophrenia" to="sprite" method="_on_schizophrenia_dashed"]
 [connection signal="teleported" from="schizophrenia" to="sprite" method="_on_schizophrenia_teleported"]
