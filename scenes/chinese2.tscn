@@ -1,63 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://68w5cpsdt4ox"]
+[gd_scene load_steps=5 format=3 uid="uid://68w5cpsdt4ox"]
 
+[ext_resource type="SpriteFrames" uid="uid://xnop8ix5skyw" path="res://assets/spriteFrames/chinese2.tres" id="1_4eiys"]
 [ext_resource type="Script" path="res://src/chinese2.gd" id="5_bygpw"]
-[ext_resource type="Texture2D" uid="uid://cfiwqw2ofngj1" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-6.png" id="8_xgdno"]
-[ext_resource type="Texture2D" uid="uid://bt6g1wakawsy0" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-8.png" id="9_tstrt"]
-[ext_resource type="Texture2D" uid="uid://dpe3k8dyhk3je" path="res://assets/the hungry chinese/attack2/Untitled_Artwork-9.png" id="10_quymf"]
-[ext_resource type="Texture2D" uid="uid://dyd84a3x4ry0k" path="res://assets/the hungry chinese/attack2/1.png" id="11_bfm7w"]
 [ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="13_tajqk"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f008g"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_xgdno")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_bfm7w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_bfm7w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_xgdno")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_tstrt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_quymf")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_xgdno")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 21.6667
+radius = 10.1379
 
-[node name="chinese2" type="AnimatedSprite2D"]
+[node name="chinese2" type="StaticBody2D"]
 scale = Vector2(0.6, 0.6)
-sprite_frames = SubResource("SpriteFrames_f008g")
-animation = &"attack"
-frame = 1
 script = ExtResource("5_bygpw")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(93.3333, -213.333)
+sprite_frames = ExtResource("1_4eiys")
+animation = &"idle"
 
 [node name="chopstick" type="Area2D" parent="."]
 position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(-1.66667, -321.667)
+position = Vector2(84.9999, -545.001)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("13_tajqk")]
+scale = Vector2(1.1, 1.1)
+
+[node name="collision2" type="CollisionPolygon2D" parent="."]
+position = Vector2(93.3333, -213.333)
+polygon = PackedVector2Array(195, 155, 161.667, 128.333, 123.333, 125, 78.3333, 140, 71.6667, 210, 36.6667, 215, 35, 170, -10, 105, -91.6667, 85, -165, 98.3333, -183.333, 126.667, -215, 180, -310, 241.667, -326.667, 286.667, -313.333, 323.333, -283.333, 345, -163.333, 333.333, -105, 378.333, -50, 363.333, -23.3333, 376.667, 21.6667, 328.333, 66.6667, 331.667, 156.667, 313.333, 175, 263.333, 191.667, 250, 188.333, 206.667)
 
 [connection signal="playerEaten" from="hazard" to="." method="_on_hazard_player_eaten"]

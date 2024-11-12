@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfey7n5aecoth"
+path="res://.godot/imported/nom nom chinese but better quality _D.mp3-3906e1857ea16b6c90deb511220ee104.mp3str"
+
+[deps]
+
+source_file="res://sfx/nom nom chinese but better quality _D.mp3"
+dest_files=["res://.godot/imported/nom nom chinese but better quality _D.mp3-3906e1857ea16b6c90deb511220ee104.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

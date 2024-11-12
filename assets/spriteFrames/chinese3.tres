@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://dhjq2603t0b0y"]
+
+[ext_resource type="Texture2D" uid="uid://blw7gs8ubcsv2" path="res://assets/the hungry chinese/attack3/1.png" id="1_ratup"]
+[ext_resource type="Texture2D" uid="uid://b2f10pkkweoti" path="res://assets/the hungry chinese/attack3/2.png" id="2_s5bd4"]
+[ext_resource type="Texture2D" uid="uid://dpwxcenufeij6" path="res://assets/the hungry chinese/attack3/3.png" id="3_uvb1h"]
+[ext_resource type="Texture2D" uid="uid://bxhdmiebh1820" path="res://assets/the hungry chinese/attack3/4.png" id="4_v525p"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ratup")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_s5bd4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uvb1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v525p")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ratup")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

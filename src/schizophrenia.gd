@@ -26,7 +26,7 @@ func _physics_process(_delta: float) -> void:
 	
 	for ability in activeAbilities:
 		if shouldActivate(ability):
-			startTimer(ability, 0.2)
+			startTimer(ability, 2)
 
 # abilities dict formatted as {"abilityname": "input"}
 # abilities not stated in dict set to false (inactive)
@@ -50,6 +50,7 @@ func switchLeftRight():
 		player.controls["right"] = "a"
 	isLeftRightSchizo = !isLeftRightSchizo
 	pulseOverlay(Color(1, 0, 0))
+	player.schizoed.emit("leftRight", isLeftRightSchizo)
 
 func switchUpDown():
 	if isUpDownSchizo:
@@ -60,6 +61,7 @@ func switchUpDown():
 		player.controls["down"] = "w"
 	isUpDownSchizo = !isUpDownSchizo
 	pulseOverlay(Color(0, 1, 0))
+	player.schizoed.emit("upDown", isUpDownSchizo)
 
 func sonic(sonicVelocity):
 	dashed.emit()
@@ -72,9 +74,9 @@ func antiSonic(antiSonicFactor):
 	player.accel = initialAccel
 
 func teleport(teleportRadius): 
-	var angle = randi_range(0, 2 * PI)
+	var angle = randf_range(0, 2 * PI)
 	while !canTeleport(teleportRadius * Vector2(cos(angle), sin(angle))):
-		angle = randi_range(0, 2 * PI)
+		angle = randf_range(0, 2 * PI)
 	teleported.emit()
 	player.frozen = true
 	$"../collision".disabled = true
@@ -94,7 +96,6 @@ func canTeleport(position):
 
 func pulseOverlay(color: Color):
 	var shader = load("res://shaderMaterial.tres")
-	var overlay = $"../overlay"
 	shader.set_shader_parameter("intensity", 0.3)
 	while shader.get_shader_parameter("intensity") > -1:
 		await get_tree().create_timer(0.01).timeout

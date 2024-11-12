@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcnafo4agiw74"]
+
+[ext_resource type="FontFile" uid="uid://ccvvp5fgi4sm7" path="res://font/KiriFont.otf" id="1_ixtr8"]
+[ext_resource type="Texture2D" uid="uid://3ggruamypbu" path="res://assets/passedBG.jpeg" id="1_t65bt"]
+
+[node name="End Screen (passed)" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2467.0
+offset_bottom = 1706.0
+scale = Vector2(0.7, 0.7)
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -307.143
+offset_top = -255.714
+offset_right = -307.143
+offset_bottom = -255.714
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("1_t65bt")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 60.7143
+offset_top = 599.714
+offset_right = 2448.71
+offset_bottom = 1031.71
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ixtr8")
+theme_override_font_sizes/font_size = 140
+text = "You have escaped
+
+The frog wins"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1230, 850)

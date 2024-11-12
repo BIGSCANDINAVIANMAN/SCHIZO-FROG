@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/master.gd" id="1_rcd5n"]
 [ext_resource type="Texture2D" uid="uid://bow7pffaxrmqs" path="res://assets/start_backdrop.png" id="2_fddlh"]
 [ext_resource type="FontFile" uid="uid://ccvvp5fgi4sm7" path="res://font/KiriFont.otf" id="3_5pjjr"]
-[ext_resource type="Script" path="res://scenes/PlayButton.gd" id="4_4nhuw"]
+[ext_resource type="AudioStream" uid="uid://d2s135ixf5irw" path="res://sfx/title.mp3" id="4_2sups"]
 
 [node name="master" type="Node"]
 process_mode = 3
@@ -11,16 +11,24 @@ script = ExtResource("1_rcd5n")
 
 [node name="Start Screen" type="Control" parent="."]
 layout_mode = 3
-anchors_preset = 0
-offset_left = -1223.0
-offset_top = -779.0
-offset_right = 745.0
-offset_bottom = 530.0
+anchor_right = 1.011
+anchor_bottom = 0.912
+offset_left = 15.0
+offset_top = -1.0
+offset_right = 163.2
+offset_bottom = 213.6
+scale = Vector2(0.78, 0.78)
 
 [node name="TextureRect" type="TextureRect" parent="Start Screen"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.05
+anchor_bottom = 1.0
+offset_left = -20.5128
+offset_top = -61.5385
+offset_right = 387.087
+offset_bottom = 347.462
+scale = Vector2(0.95, 0.95)
 texture = ExtResource("2_fddlh")
 
 [node name="Control" type="Control" parent="Start Screen"]
@@ -31,7 +39,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Start Screen/Control"]
+[node name="Start" type="Button" parent="Start Screen/Control"]
 layout_mode = 0
 offset_left = 1013.0
 offset_top = 1184.0
@@ -42,7 +50,6 @@ theme_override_fonts/font = ExtResource("3_5pjjr")
 theme_override_font_sizes/font_size = 120
 text = "Play
 "
-script = ExtResource("4_4nhuw")
 
 [node name="Label" type="Label" parent="Start Screen/Control"]
 layout_mode = 0
@@ -55,114 +62,7 @@ theme_override_fonts/font = ExtResource("3_5pjjr")
 theme_override_font_sizes/font_size = 97
 text = "Schizo Frog :)"
 
-[node name="End Screen (failed)" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1218.0
-offset_top = -773.0
-offset_right = 1249.0
-offset_bottom = 933.0
+[node name="bgm" type="AudioStreamPlayer" parent="Start Screen"]
+stream = ExtResource("4_2sups")
 
-[node name="ColorRect" type="ColorRect" parent="End Screen (failed)"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0862745, 0.0392157, 0.0117647, 1)
-
-[node name="Label" type="Label" parent="End Screen (failed)"]
-layout_mode = 0
-offset_left = 95.0
-offset_top = 707.0
-offset_right = 3277.0
-offset_bottom = 911.0
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 140
-text = "The Chinese are Hungry"
-
-[node name="End Screen (passed)" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1214.0
-offset_top = -775.0
-offset_right = 1245.0
-offset_bottom = 927.0
-
-[node name="ColorRect" type="ColorRect" parent="End Screen (passed)"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.0862745, 0.0392157, 0.0117647, 1)
-
-[node name="Label" type="Label" parent="End Screen (passed)"]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 574.0
-offset_right = 2411.0
-offset_bottom = 1012.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 215
-text = "om nom nom the
-chinese are ffed"
-
-[node name="Menu" type="Control" parent="."]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1216.0
-offset_top = -779.0
-offset_right = 1249.0
-offset_bottom = 941.0
-
-[node name="Menu button" type="Button" parent="Menu"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -393.0
-offset_top = 52.0
-offset_right = -53.0
-offset_bottom = 161.0
-grow_horizontal = 0
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 100
-button_mask = 7
-text = "Menu"
-
-[node name="Resume" type="Button" parent="Menu"]
-layout_mode = 1
-offset_left = 1956.0
-offset_top = 197.0
-offset_right = 2429.0
-offset_bottom = 306.0
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 100
-text = "Resume"
-
-[node name="Restart" type="Button" parent="Menu"]
-layout_mode = 1
-offset_left = 1886.0
-offset_top = 360.0
-offset_right = 2431.0
-offset_bottom = 469.0
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 100
-text = "Restart"
-
-[node name="Quit" type="Button" parent="Menu"]
-layout_mode = 1
-offset_left = 2110.0
-offset_top = 508.0
-offset_right = 2436.0
-offset_bottom = 617.0
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 100
-text = "Quit"
+[connection signal="pressed" from="Start Screen/Control/Start" to="." method="_on_start_pressed"]

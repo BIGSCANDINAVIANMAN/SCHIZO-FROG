@@ -1,77 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://u5xyc5ijr1nq"]
+[gd_scene load_steps=5 format=3 uid="uid://u5xyc5ijr1nq"]
 
-[ext_resource type="Texture2D" uid="uid://d3ms5n0fc84pg" path="res://assets/the hungry chinese/attack1/1.png" id="1_rrifl"]
-[ext_resource type="Texture2D" uid="uid://cpm60fllvr5tw" path="res://assets/the hungry chinese/attack1/2.png" id="2_44gmt"]
-[ext_resource type="Texture2D" uid="uid://cp6rvraaa676w" path="res://assets/the hungry chinese/attack1/3.png" id="3_x5ih7"]
-[ext_resource type="Texture2D" uid="uid://sohbvvwc5dkq" path="res://assets/the hungry chinese/attack1/4.png" id="4_yl86h"]
-[ext_resource type="Texture2D" uid="uid://dy8qq0o5vjtxr" path="res://assets/the hungry chinese/attack1/5.png" id="5_68870"]
-[ext_resource type="Texture2D" uid="uid://bgimpa0su2vdi" path="res://assets/the hungry chinese/attack1/6.png" id="6_ru8ia"]
-[ext_resource type="Texture2D" uid="uid://dxls6uvxgsuvs" path="res://assets/the hungry chinese/attack1/7.png" id="7_efxdi"]
+[ext_resource type="SpriteFrames" uid="uid://f2w26b7bkcnb" path="res://assets/spriteFrames/chinese1.tres" id="2_a4i7c"]
 [ext_resource type="Script" path="res://src/chinese1.gd" id="8_i3rqy"]
 [ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="9_3rbcj"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f008g"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_rrifl")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_44gmt")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_x5ih7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_yl86h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_68870")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ru8ia")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_efxdi")
-}],
-"loop": false,
-"name": &"attack",
-"speed": 15.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_rrifl")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 21.7307
+radius = 10.138
 
-[node name="chinese1" type="AnimatedSprite2D"]
+[node name="chinese1" type="StaticBody2D"]
 scale = Vector2(0.6, 0.6)
-sprite_frames = SubResource("SpriteFrames_f008g")
-animation = &"attack"
-frame = 6
-frame_progress = 1.0
 script = ExtResource("8_i3rqy")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(93.3333, -186.667)
+sprite_frames = ExtResource("2_a4i7c")
+animation = &"attack"
+frame = 4
+frame_progress = 1.0
 
 [node name="chopstick" type="Area2D" parent="."]
 position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(-6.66667, -388.333)
+position = Vector2(81.6666, -578.333)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("9_3rbcj")]
+position = Vector2(0, 26.6667)
 scale = Vector2(1.2, 1.2)
 
-[node name="staticBody" type="StaticBody2D" parent="."]
-
-[node name="collision2" type="CollisionPolygon2D" parent="staticBody"]
-position = Vector2(2.08165e-12, -70)
+[node name="collision2" type="CollisionPolygon2D" parent="."]
+position = Vector2(93.3333, -256.667)
 scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(76.1905, 328.571, 26.1905, 247.619, -57.1429, 190.476, -135.714, 192.857, -211.905, 192.857, -266.667, 235.714, -311.905, 309.524, -326.19, 366.667, -323.809, 402.381, -409.524, 402.381, -480.952, 433.333, -476.19, 504.762, -452.381, 561.905, -211.905, 564.286, -123.81, 597.619, -11.9048, 561.905, 107.143, 564.286, 183.333, 530.952, 228.571, 464.286, 252.381, 300, 104.762, 264.286)
 

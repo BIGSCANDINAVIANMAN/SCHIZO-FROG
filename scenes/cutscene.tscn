@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b1dno75wgj3kv"]
+[gd_scene load_steps=43 format=3 uid="uid://b1dno75wgj3kv"]
 
 [ext_resource type="Script" path="res://src/cutscene.gd" id="1_2dafy"]
 [ext_resource type="Texture2D" uid="uid://bqg4ukil6v24x" path="res://assets/textBox.png" id="1_6omud"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://ca0p404n456ok" path="res://assets/cutscene/2/21.png" id="36_swk51"]
 [ext_resource type="Texture2D" uid="uid://do44hcbmfbr83" path="res://assets/Plates/1.png" id="37_lmb1s"]
 [ext_resource type="Texture2D" uid="uid://dmjkq3kbsqv50" path="res://assets/Plates/2.png" id="38_1ehtl"]
+[ext_resource type="AudioStream" uid="uid://dp4oca7dctge3" path="res://sfx/cutscene12.mp3" id="41_cmn4w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x657y"]
 animations = [{
@@ -185,9 +186,10 @@ animation = &"1"
 
 [node name="textBox" type="NinePatchRect" parent="."]
 offset_left = -1025.0
-offset_top = -1173.0
+offset_top = -1245.0
 offset_right = 1098.0
-offset_bottom = 467.0
+offset_bottom = 395.0
+rotation = 0.0628319
 texture = ExtResource("1_6omud")
 
 [node name="text" type="RichTextLabel" parent="textBox"]
@@ -203,3 +205,6 @@ text = "frogs frogs frogs frogs frogs frogs frogs frogs frogs frogs  frogs frogs
 autowrap_mode = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("41_cmn4w")

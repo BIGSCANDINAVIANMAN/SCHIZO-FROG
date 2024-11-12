@@ -8,7 +8,9 @@ script = ExtResource("1_531wo")
 [node name="safeTime" type="Timer" parent="."]
 
 [node name="collision" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(2, 179, -367, -112, -333, -191, -266, -280, -197, -339, -101, -378, -1, -385, 103, -369, 195, -332, 271, -277, 331, -199, 370, -103)
+position = Vector2(0, -88)
+scale = Vector2(1.2, 1.2)
+polygon = PackedVector2Array(2, 179, -333, -191, -266, -280, -197, -339, -101, -378, -1, -385, 103, -369, 195, -332, 271, -277, 331, -199)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

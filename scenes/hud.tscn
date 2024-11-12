@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn8lar488daha"]
+[gd_scene load_steps=3 format=3 uid="uid://dn8lar488daha"]
 
 [ext_resource type="Script" path="res://src/hud.gd" id="1_tqs13"]
+[ext_resource type="FontFile" uid="uid://doj1exsma4jew" path="res://font/KiriFont.ttf" id="2_qcajq"]
 
 [node name="hud" type="Control"]
 layout_mode = 3
@@ -15,22 +16,33 @@ script = ExtResource("1_tqs13")
 layout_mode = 0
 offset_left = 42.0
 offset_top = 36.0
-offset_right = 206.0
-offset_bottom = 96.0
+offset_right = 345.0
+offset_bottom = 195.0
 color = Color(0, 0, 0, 1)
 
 [node name="timerLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 43.0
-offset_top = 36.0
-offset_right = 206.0
-offset_bottom = 96.0
-theme_override_font_sizes/normal_font_size = 40
+offset_top = 84.0
+offset_right = 348.0
+offset_bottom = 243.0
+theme_override_fonts/normal_font = ExtResource("2_qcajq")
+theme_override_font_sizes/normal_font_size = 75
 bbcode_enabled = true
 text = " [center]00:00[center]"
 
 [node name="gameTimer" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
+
+[node name="schizoLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = -6.0
+offset_top = 156.0
+offset_right = 1952.0
+offset_bottom = 304.0
+theme_override_fonts/normal_font = ExtResource("2_qcajq")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
 
 [connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]
