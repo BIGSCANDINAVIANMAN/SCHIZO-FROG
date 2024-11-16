@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://bsbfmpgqqvt03"]
+[gd_scene load_steps=49 format=3 uid="uid://bsbfmpgqqvt03"]
 
 [ext_resource type="Script" path="res://src/mahjong.gd" id="1_ovsxs"]
 [ext_resource type="Texture2D" uid="uid://bv6ygqkc64ch4" path="res://assets/mahjongBG.png" id="1_tdwx2"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://cqibtbij4nyam" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-37.png" id="39_fjrdn"]
 [ext_resource type="Texture2D" uid="uid://in00ngoui26i" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-38.png" id="40_83e4a"]
 [ext_resource type="Texture2D" uid="uid://b656lom3po6xc" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-39.png" id="41_iv28h"]
+[ext_resource type="PackedScene" uid="uid://dyb2npfkrsq8x" path="res://scenes/jonger.tscn" id="44_vot5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkhcd"]
 size = Vector2(78.9493, 128.053)
@@ -270,5 +271,8 @@ position = Vector2(955.769, 600.5)
 scale = Vector2(0.739635, 0.739634)
 sprite_frames = SubResource("SpriteFrames_dvyg0")
 animation = &"mahjongIntro"
+
+[node name="jonger" parent="." instance=ExtResource("44_vot5v")]
+position = Vector2(55, 794)
 
 [connection signal="animation_finished" from="CanvasLayer/cutscene" to="." method="_on_cutscene_animation_finished"]

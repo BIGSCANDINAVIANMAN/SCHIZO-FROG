@@ -47,7 +47,6 @@ script = ExtResource("1_i2ch3")
 main = NodePath("..")
 
 [node name="outerTable" type="Area2D" parent="table"]
-scale = Vector2(1, 1)
 
 [node name="collision" type="CollisionShape2D" parent="table/outerTable"]
 scale = Vector2(1.5, 1.5)
@@ -58,7 +57,6 @@ shape = SubResource("CircleShape2D_6rmbc")
 
 [node name="tableSprite" type="Sprite2D" parent="table"]
 position = Vector2(-0.769302, -0.833332)
-scale = Vector2(1, 1)
 texture = ExtResource("3_hgs7p")
 
 [node name="glassSpinny" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_qk4qq")]

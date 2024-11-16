@@ -31,3 +31,6 @@ func getDirection() -> Vector2:
 	var x = Input.get_axis(controls["left"], controls["right"])
 	var y = Input.get_axis(controls["up"], controls["down"])
 	return Vector2(x, y)
+
+func splat():
+	$sprite.play("splat")

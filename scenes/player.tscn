@@ -206,6 +206,11 @@ region = Rect2(6150, 0, 2050, 2050)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_df7ib"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"splat",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7m40n")
@@ -381,7 +386,7 @@ script = ExtResource("1_uqn3s")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_df7ib")
-animation = &"teleport"
+animation = &"splat"
 script = ExtResource("2_fj0lq")
 
 [node name="dashSprite" type="AnimatedSprite2D" parent="."]
