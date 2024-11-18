@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbjg1fnwnigsk"]
+
+[ext_resource type="Script" path="res://src/level_select.gd" id="1_sb2jl"]
+[ext_resource type="Texture2D" uid="uid://dnm1m10s2x581" path="res://assets/heartThing.png" id="2_3tlao"]
+[ext_resource type="FontFile" uid="uid://ccvvp5fgi4sm7" path="res://font/KiriFont.otf" id="3_3oeqb"]
+
+[node name="levelSelect" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sb2jl")
+
+[node name="ColorRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 2360.0
+offset_bottom = 1640.0
+scale = Vector2(0.81, 0.81)
+texture = ExtResource("2_3tlao")
+
+[node name="startRestaurant" type="Button" parent="."]
+layout_mode = 0
+offset_left = 544.0
+offset_top = 499.0
+offset_right = 1487.0
+offset_bottom = 712.0
+theme_override_fonts/font = ExtResource("3_3oeqb")
+theme_override_font_sizes/font_size = 100
+text = "Restaurant"
+
+[node name="startMahjong" type="Button" parent="."]
+layout_mode = 0
+offset_left = 545.0
+offset_top = 836.0
+offset_right = 1487.0
+offset_bottom = 1046.0
+theme_override_fonts/font = ExtResource("3_3oeqb")
+theme_override_font_sizes/font_size = 100
+text = "Mahjong"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 164.0
+offset_right = 1764.0
+offset_bottom = 440.0
+theme_override_fonts/font = ExtResource("3_3oeqb")
+theme_override_font_sizes/font_size = 200
+text = "Level Select"
+
+[connection signal="pressed" from="startRestaurant" to="." method="_on_start_restaurant_pressed"]
+[connection signal="pressed" from="startMahjong" to="." method="_on_start_mahjong_pressed"]

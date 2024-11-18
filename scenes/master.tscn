@@ -1,69 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhlqy7aaoym1t"]
+[gd_scene load_steps=4 format=3 uid="uid://bhlqy7aaoym1t"]
 
 [ext_resource type="Script" path="res://src/master.gd" id="1_rcd5n"]
-[ext_resource type="Texture2D" uid="uid://bow7pffaxrmqs" path="res://assets/start_backdrop.png" id="2_fddlh"]
-[ext_resource type="FontFile" uid="uid://ccvvp5fgi4sm7" path="res://font/KiriFont.otf" id="3_5pjjr"]
+[ext_resource type="PackedScene" uid="uid://r1shfe1txswn" path="res://scenes/start_screen.tscn" id="2_lfr88"]
 [ext_resource type="AudioStream" uid="uid://c35dgooyww04i" path="res://sfx/Mii Channel Music.mp3" id="4_ta6is"]
 
 [node name="master" type="Node"]
 process_mode = 3
 script = ExtResource("1_rcd5n")
 
-[node name="Start Screen" type="Control" parent="."]
-layout_mode = 3
-anchor_right = 1.011
-anchor_bottom = 0.912
-offset_left = 15.0
-offset_top = -1.0
-offset_right = 163.2
-offset_bottom = 213.6
-scale = Vector2(0.78, 0.78)
+[node name="Start Screen" parent="." instance=ExtResource("2_lfr88")]
 
-[node name="TextureRect" type="TextureRect" parent="Start Screen"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.05
-anchor_bottom = 1.0
-offset_left = -20.5128
-offset_top = -61.5385
-offset_right = 387.087
-offset_bottom = 347.462
-scale = Vector2(0.95, 0.95)
-texture = ExtResource("2_fddlh")
-
-[node name="Control" type="Control" parent="Start Screen"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Start" type="Button" parent="Start Screen/Control"]
-layout_mode = 0
-offset_left = 1013.0
-offset_top = 1184.0
-offset_right = 1439.0
-offset_bottom = 1389.0
-theme_override_colors/font_color = Color(0.572549, 0.709804, 0.454902, 1)
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 120
-text = "Play
-"
-
-[node name="Label" type="Label" parent="Start Screen/Control"]
-layout_mode = 0
-offset_left = 807.0
-offset_top = 572.0
-offset_right = 2682.0
-offset_bottom = 776.0
-theme_override_colors/font_color = Color(0.0666667, 0.188235, 0.0980392, 1)
-theme_override_fonts/font = ExtResource("3_5pjjr")
-theme_override_font_sizes/font_size = 97
-text = "Schizo Frog :)"
-
-[node name="bgm" type="AudioStreamPlayer" parent="Start Screen"]
+[node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_ta6is")
 autoplay = true
 
-[connection signal="pressed" from="Start Screen/Control/Start" to="." method="_on_start_pressed"]
+[connection signal="startPressed" from="Start Screen" to="." method="_on_start_screen_start_pressed"]

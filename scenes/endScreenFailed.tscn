@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://boqng6a06ivcb"]
+[gd_scene load_steps=5 format=3 uid="uid://boqng6a06ivcb"]
 
 [ext_resource type="FontFile" uid="uid://ccvvp5fgi4sm7" path="res://font/KiriFont.otf" id="1_81myd"]
+[ext_resource type="Script" path="res://src/endScreenFailed.gd" id="1_jn8e7"]
 [ext_resource type="Texture2D" uid="uid://b82u10g50f71i" path="res://assets/failedBG.jpeg" id="1_xmkfy"]
 [ext_resource type="AudioStream" uid="uid://dovwlmp01tdlf" path="res://sfx/Play failed.mp3" id="2_lvxrb"]
 
@@ -12,6 +13,7 @@ offset_top = -640.0
 offset_right = 1529.0
 offset_bottom = 1062.0
 scale = Vector2(0.75, 0.75)
+script = ExtResource("1_jn8e7")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 1
@@ -30,13 +32,13 @@ texture = ExtResource("1_xmkfy")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 14.6664
-offset_top = 502.667
+offset_top = 257.334
 offset_right = 2443.67
-offset_bottom = 1417.67
+offset_bottom = 1172.34
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("1_81myd")
 theme_override_font_sizes/font_size = 160
-text = "You have been eaten
+text = "The chinese are om nom nom
 
 The schizophrenia wins"
 horizontal_alignment = 1
@@ -47,3 +49,14 @@ position = Vector2(1230, 850)
 
 [node name="nom" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_lvxrb")
+
+[node name="startMahjong" type="Button" parent="."]
+offset_left = 774.667
+offset_top = 1217.33
+offset_right = 1716.67
+offset_bottom = 1427.33
+theme_override_fonts/font = ExtResource("1_81myd")
+theme_override_font_sizes/font_size = 100
+text = "Exit"
+
+[connection signal="pressed" from="startMahjong" to="." method="_on_start_mahjong_pressed"]

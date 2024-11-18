@@ -33,10 +33,15 @@ offset_bottom = 1031.71
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ixtr8")
 theme_override_font_sizes/font_size = 140
-text = "You have escaped
+text = "The Chinese are Hungry
 
 The frog wins"
 horizontal_alignment = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1230, 850)
+
+[node name="button" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

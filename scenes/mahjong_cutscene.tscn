@@ -170,7 +170,7 @@ animations = [{
 script = ExtResource("1_apyrp")
 
 [node name="cutscene" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.38, 0.38)
 sprite_frames = SubResource("SpriteFrames_korky")
 animation = &"mahjongIntro"
 

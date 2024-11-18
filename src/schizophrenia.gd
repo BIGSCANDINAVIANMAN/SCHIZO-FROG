@@ -29,7 +29,7 @@ func _physics_process(_delta: float) -> void:
 	
 	for ability in activeAbilities:
 		if shouldActivate(ability):
-			startTimer(ability, 2)
+			startTimer(ability, 4)
 
 # abilities dict formatted as {"abilityname": "input"}
 # abilities not stated in dict set to false (inactive)
@@ -69,6 +69,7 @@ func switchUpDown():
 func sonic(sonicVelocity):
 	dashed.emit()
 	player.velocity += sonicVelocity * player.getDirection()
+	player.dashed.emit()
 
 func antiSonic(antiSonicFactor):
 	var initialAccel = player.accel
@@ -77,6 +78,7 @@ func antiSonic(antiSonicFactor):
 	player.accel = initialAccel
 
 func teleport(teleportRadius): 
+	player.teleported.emit()
 	teleported.emit()
 	player.frozen = true
 	$"../collision".disabled = true

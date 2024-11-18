@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn8lar488daha"]
+[gd_scene load_steps=4 format=3 uid="uid://dn8lar488daha"]
 
 [ext_resource type="Script" path="res://src/hud.gd" id="1_tqs13"]
 [ext_resource type="FontFile" uid="uid://doj1exsma4jew" path="res://font/KiriFont.ttf" id="2_qcajq"]
+[ext_resource type="Texture2D" uid="uid://dhih6w0a3nbfb" path="res://assets/bigkey.png" id="3_57flt"]
 
 [node name="hud" type="Control"]
 layout_mode = 3
@@ -18,7 +19,7 @@ offset_left = 42.0
 offset_top = 36.0
 offset_right = 345.0
 offset_bottom = 195.0
-color = Color(0, 0, 0, 1)
+color = Color(0.278431, 0.772549, 0.27451, 1)
 
 [node name="timerLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -44,5 +45,28 @@ offset_bottom = 304.0
 theme_override_fonts/normal_font = ExtResource("2_qcajq")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
+
+[node name="leftKey" type="Sprite2D" parent="."]
+position = Vector2(1515, 1057)
+rotation = 1.5708
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_57flt")
+
+[node name="downKey" type="Sprite2D" parent="."]
+position = Vector2(1651, 1057)
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_57flt")
+
+[node name="upKey" type="Sprite2D" parent="."]
+position = Vector2(1651, 921)
+rotation = 3.14159
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_57flt")
+
+[node name="rightKey" type="Sprite2D" parent="."]
+position = Vector2(1787, 1057)
+rotation = -1.5708
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("3_57flt")
 
 [connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]

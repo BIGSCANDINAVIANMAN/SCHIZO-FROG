@@ -111,3 +111,5 @@ position = Vector2(772, -37)
 rotation = -1.5708
 scale = Vector2(0.75, 0.75)
 player = NodePath("../player")
+
+[connection signal="schizoed" from="player" to="CanvasLayer/hud" method="_on_player_schizoed"]

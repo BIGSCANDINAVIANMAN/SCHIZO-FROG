@@ -20,7 +20,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("leftClick") or Input.is_action_just_pressed("space"):
-		progress()
+		if textBox.get_child(0).visible_ratio == 1:
+			progress()
 
 func progress():
 	if len(sceneInfo[currentScene]) - 1 == currentIndex:
@@ -30,6 +31,7 @@ func progress():
 		return
 	
 	if len(sceneInfo) - 1 == currentScene:
+		await get_tree().create_tween().tween_property(self, "modulate", Color(0, 0, 0), 0.5).finished
 		finished.emit()
 		queue_free()
 		return
@@ -42,4 +44,4 @@ func displayText(text):
 	textBox.visible = true
 	textBox.get_child(0).text = text
 	textBox.get_child(0).visible_ratio = 0
-	get_tree().create_tween().tween_property($textBox/text, "visible_ratio", 1, len(text)/40.0)
+	get_tree().create_tween().tween_property($textBox/text, "visible_ratio", 1, len(text)/50.0)

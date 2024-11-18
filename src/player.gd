@@ -13,6 +13,8 @@ var controls = {
 var directionFacing = Vector2(1, 0)
 var frozen = false
 signal schizoed(direction, isSchizo)
+signal teleported
+signal dashed
 
 func _physics_process(_delta: float) -> void:
 	var direction = getDirection()

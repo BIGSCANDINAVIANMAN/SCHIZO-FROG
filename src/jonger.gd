@@ -24,4 +24,5 @@ func _on_fire_jong_timeout() -> void:
 	fireJong()
 
 func _on_speedup_timeout() -> void:
+	return
 	$fireJong.wait_time -= 0.5
