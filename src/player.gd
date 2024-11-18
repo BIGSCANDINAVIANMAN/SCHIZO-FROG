@@ -34,3 +34,4 @@ func getDirection() -> Vector2:
 
 func splat():
 	$sprite.play("splat")
+	frozen = true

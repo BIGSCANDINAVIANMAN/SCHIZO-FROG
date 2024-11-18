@@ -1,8 +1,9 @@
-[gd_scene load_steps=61 format=3 uid="uid://bw313ph3mn5vr"]
+[gd_scene load_steps=62 format=3 uid="uid://bw313ph3mn5vr"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_uqn3s"]
 [ext_resource type="Texture2D" uid="uid://d2t73wwvw1r0l" path="res://assets/runwalk.png" id="2_04rmf"]
 [ext_resource type="Script" path="res://src/sprite.gd" id="2_fj0lq"]
+[ext_resource type="Texture2D" uid="uid://b8jq5x4t4hs21" path="res://assets/dead frog with blood.png" id="2_hkcgp"]
 [ext_resource type="Texture2D" uid="uid://d1w77wr7rbnqr" path="res://assets/sprite_sheet (18).png" id="2_j67u5"]
 [ext_resource type="Script" path="res://src/schizophrenia.gd" id="2_sb4o5"]
 [ext_resource type="Texture2D" uid="uid://ct3nvfw1da7sk" path="res://assets/light.png" id="6_m5lv5"]
@@ -206,7 +207,10 @@ region = Rect2(6150, 0, 2050, 2050)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_df7ib"]
 animations = [{
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hkcgp")
+}],
 "loop": true,
 "name": &"splat",
 "speed": 5.0
@@ -386,7 +390,7 @@ script = ExtResource("1_uqn3s")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_df7ib")
-animation = &"splat"
+animation = &"walkRun"
 script = ExtResource("2_fj0lq")
 
 [node name="dashSprite" type="AnimatedSprite2D" parent="."]
@@ -417,7 +421,8 @@ texture = SubResource("GradientTexture2D_5tnte")
 [node name="testArea" type="Area2D" parent="."]
 
 [node name="collision" type="CollisionShape2D" parent="testArea"]
-position = Vector2(2.5, -8.5)
+position = Vector2(2.5, -7.5)
+scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_bkbne")
 
 [connection signal="dashed" from="schizophrenia" to="sprite" method="_on_schizophrenia_dashed"]

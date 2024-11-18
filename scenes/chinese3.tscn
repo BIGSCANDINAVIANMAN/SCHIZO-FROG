@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="6_cymg4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 13.4371
+radius = 8.49814
 
 [node name="chinese3" type="StaticBody2D"]
 scale = Vector2(0.6, 0.6)
@@ -20,7 +20,7 @@ animation = &"idle"
 position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(101.667, -548.334)
+position = Vector2(106.667, -531.667)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("6_cymg4")]

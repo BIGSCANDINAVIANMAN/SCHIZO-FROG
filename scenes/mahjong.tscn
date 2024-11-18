@@ -1,183 +1,14 @@
-[gd_scene load_steps=49 format=3 uid="uid://bsbfmpgqqvt03"]
+[gd_scene load_steps=8 format=3 uid="uid://bsbfmpgqqvt03"]
 
 [ext_resource type="Script" path="res://src/mahjong.gd" id="1_ovsxs"]
 [ext_resource type="Texture2D" uid="uid://bv6ygqkc64ch4" path="res://assets/mahjongBG.png" id="1_tdwx2"]
 [ext_resource type="PackedScene" uid="uid://bw313ph3mn5vr" path="res://scenes/player.tscn" id="2_qp47a"]
 [ext_resource type="PackedScene" uid="uid://dn8lar488daha" path="res://scenes/hud.tscn" id="3_qhxeq"]
-[ext_resource type="Texture2D" uid="uid://b2g71jmnfc6ks" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-1.png" id="3_xcoj6"]
-[ext_resource type="Texture2D" uid="uid://ddyvggjto1x5j" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-2.png" id="4_go4gf"]
-[ext_resource type="Texture2D" uid="uid://2o73yds0wpnk" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-3.png" id="5_c0vqr"]
-[ext_resource type="Texture2D" uid="uid://d8kck7pb8bkv" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-4.png" id="6_b0y4a"]
-[ext_resource type="Texture2D" uid="uid://c6ms35qi4plcd" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-5.png" id="7_aset7"]
-[ext_resource type="Texture2D" uid="uid://de8eub3a2xcp6" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-6.png" id="8_3hjtm"]
-[ext_resource type="Texture2D" uid="uid://co5j4tsmt4o8g" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-7.png" id="9_gtuqq"]
-[ext_resource type="Texture2D" uid="uid://f6yh3wa4p6fo" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-8.png" id="10_4yf1o"]
-[ext_resource type="Texture2D" uid="uid://ccprthrqm1t1q" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-9.png" id="11_tcnyf"]
-[ext_resource type="Texture2D" uid="uid://cyx1alcsquxpu" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-10.png" id="12_t7cxi"]
-[ext_resource type="Texture2D" uid="uid://f1l0d8br2g44" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-11.png" id="13_dwc3i"]
-[ext_resource type="Texture2D" uid="uid://dlkxe3qm404ux" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-12.png" id="14_b4lej"]
-[ext_resource type="Texture2D" uid="uid://t4if4p0j32kg" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-13.png" id="15_lshec"]
-[ext_resource type="Texture2D" uid="uid://dub8c4hmyr3yc" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-14.png" id="16_n271q"]
-[ext_resource type="Texture2D" uid="uid://b5pksdm5be5xi" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-15.png" id="17_l2ke2"]
-[ext_resource type="Texture2D" uid="uid://xs5c7dxtqamd" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-16.png" id="18_vogxy"]
-[ext_resource type="Texture2D" uid="uid://tnphafjcbt07" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-17.png" id="19_4rko0"]
-[ext_resource type="Texture2D" uid="uid://c2w4qv4b76wve" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-18.png" id="20_j5jw2"]
-[ext_resource type="Texture2D" uid="uid://bgws6eu8a32hm" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-19.png" id="21_h0sxg"]
-[ext_resource type="Texture2D" uid="uid://b4853mjgqjfu4" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-20.png" id="22_5yjlv"]
-[ext_resource type="Texture2D" uid="uid://duf7amx1mhv2" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-21.png" id="23_56vrr"]
-[ext_resource type="Texture2D" uid="uid://bpprop2bhl1x8" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-22.png" id="24_cvhe1"]
-[ext_resource type="Texture2D" uid="uid://p1kby3hbmw7b" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-23.png" id="25_x145q"]
-[ext_resource type="Texture2D" uid="uid://cbtvqs04mh51o" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-24.png" id="26_8og7j"]
-[ext_resource type="Texture2D" uid="uid://uhknpuxkf702" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-25.png" id="27_8dw8k"]
-[ext_resource type="Texture2D" uid="uid://brbc22x575r2w" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-26.png" id="28_mpsn3"]
-[ext_resource type="Texture2D" uid="uid://dxddcxfjhyq7m" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-27.png" id="29_le7em"]
-[ext_resource type="Texture2D" uid="uid://cpqi0y4a86ab1" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-28.png" id="30_a56gx"]
-[ext_resource type="Texture2D" uid="uid://bav3bo12c5clc" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-29.png" id="31_m5i2s"]
-[ext_resource type="Texture2D" uid="uid://6feyt25orcpd" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-30.png" id="32_y46i4"]
-[ext_resource type="Texture2D" uid="uid://bipti1ch48oxj" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-31.png" id="33_qd6s3"]
-[ext_resource type="Texture2D" uid="uid://drmfgf7m4qq1h" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-32.png" id="34_a4ne6"]
-[ext_resource type="Texture2D" uid="uid://bch4i3q3tpjvf" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-33.png" id="35_uplla"]
-[ext_resource type="Texture2D" uid="uid://dtukw3qdpnjcr" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-34.png" id="36_d60j6"]
-[ext_resource type="Texture2D" uid="uid://c0tx2wlo33hb3" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-35.png" id="37_8hlk1"]
-[ext_resource type="Texture2D" uid="uid://763vliceavgr" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-36.png" id="38_c11w4"]
-[ext_resource type="Texture2D" uid="uid://cqibtbij4nyam" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-37.png" id="39_fjrdn"]
-[ext_resource type="Texture2D" uid="uid://in00ngoui26i" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-38.png" id="40_83e4a"]
-[ext_resource type="Texture2D" uid="uid://b656lom3po6xc" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-39.png" id="41_iv28h"]
+[ext_resource type="PackedScene" uid="uid://bwicjquxhbl4b" path="res://scenes/jonger2.tscn" id="6_0kmxo"]
 [ext_resource type="PackedScene" uid="uid://dyb2npfkrsq8x" path="res://scenes/jonger.tscn" id="44_vot5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkhcd"]
 size = Vector2(78.9493, 128.053)
-
-[sub_resource type="Gradient" id="Gradient_imn7x"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_2lhww"]
-gradient = SubResource("Gradient_imn7x")
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dvyg0"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_xcoj6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_go4gf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_c0vqr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_b0y4a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_aset7")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_3hjtm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_gtuqq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_4yf1o")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_tcnyf")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_t7cxi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_dwc3i")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_b4lej")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_lshec")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_n271q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_l2ke2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_vogxy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_4rko0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_j5jw2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_h0sxg")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_5yjlv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_56vrr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("24_cvhe1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_x145q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_8og7j")
-}, {
-"duration": 1.0,
-"texture": ExtResource("27_8dw8k")
-}, {
-"duration": 1.0,
-"texture": ExtResource("28_mpsn3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("29_le7em")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_a56gx")
-}, {
-"duration": 1.0,
-"texture": ExtResource("31_m5i2s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_y46i4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("33_qd6s3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("34_a4ne6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("35_uplla")
-}, {
-"duration": 1.0,
-"texture": ExtResource("36_d60j6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("37_8hlk1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("38_c11w4")
-}, {
-"duration": 1.0,
-"texture": ExtResource("39_fjrdn")
-}, {
-"duration": 1.0,
-"texture": ExtResource("40_83e4a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("41_iv28h")
-}],
-"loop": false,
-"name": &"mahjongIntro",
-"speed": 10.0
-}]
 
 [node name="mahjong" type="Node2D"]
 script = ExtResource("1_ovsxs")
@@ -258,21 +89,25 @@ shape = SubResource("RectangleShape2D_dkhcd")
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource("3_qhxeq")]
 
-[node name="bg" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-z_index = -2
-position = Vector2(953, 596.5)
-scale = Vector2(31.625, 18.8594)
-texture = SubResource("GradientTexture2D_2lhww")
+[node name="jonger" parent="." node_paths=PackedStringArray("player") instance=ExtResource("44_vot5v")]
+position = Vector2(55, 754)
+scale = Vector2(0.75, 0.75)
+player = NodePath("../player")
 
-[node name="cutscene" type="AnimatedSprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(955.769, 600.5)
-scale = Vector2(0.739635, 0.739634)
-sprite_frames = SubResource("SpriteFrames_dvyg0")
-animation = &"mahjongIntro"
+[node name="jonger1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_0kmxo")]
+position = Vector2(-27, -781)
+rotation = 3.14159
+scale = Vector2(0.75, 0.75)
+player = NodePath("../player")
 
-[node name="jonger" parent="." instance=ExtResource("44_vot5v")]
-position = Vector2(55, 794)
+[node name="jonger2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("44_vot5v")]
+position = Vector2(-761, 50)
+rotation = 1.5708
+scale = Vector2(0.75, 0.75)
+player = NodePath("../player")
 
-[connection signal="animation_finished" from="CanvasLayer/cutscene" to="." method="_on_cutscene_animation_finished"]
+[node name="jonger3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_0kmxo")]
+position = Vector2(772, -37)
+rotation = -1.5708
+scale = Vector2(0.75, 0.75)
+player = NodePath("../player")

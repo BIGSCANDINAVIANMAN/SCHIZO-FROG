@@ -11,8 +11,11 @@ var activeAbilities = {
 @onready var player = get_parent()
 signal dashed
 signal teleported
+signal foundPosition
 
 func _physics_process(_delta: float) -> void:
+	if player.frozen:
+		return
 	if shouldActivate("switchLeftRight"):
 		switchLeftRight()
 	if shouldActivate("switchUpDown"):
@@ -74,23 +77,29 @@ func antiSonic(antiSonicFactor):
 	player.accel = initialAccel
 
 func teleport(teleportRadius): 
-	var angle = randf_range(0, 2 * PI)
-	while !canTeleport(teleportRadius * Vector2(cos(angle), sin(angle))):
-		angle = randf_range(0, 2 * PI)
 	teleported.emit()
 	player.frozen = true
 	$"../collision".disabled = true
 	await get_tree().create_timer(0.4).timeout
+	
+	var angle = randf_range(0, 2 * PI)
+	while !await canTeleport(teleportRadius * Vector2(cos(angle), sin(angle))):
+		angle = randf_range(0, 2 * PI)
+	
+	foundPosition.emit()
 	player.global_position += teleportRadius * Vector2(cos(angle), sin(angle))
-	await get_tree().create_timer(0.4).timeout
+	$"../testArea".position = Vector2(0, 0)
+	await get_tree().create_timer(0.6).timeout
 	player.frozen = false
 	$"../collision".disabled = false
 
 func canTeleport(position):
 	var testArea = $"../testArea"
-	testArea.global_position = position
+	testArea.position = position
+	await get_tree().create_timer(0.1).timeout
 	for body in testArea.get_overlapping_bodies():
-		if body.name.contains("plate"):
+		print(testArea.get_overlapping_bodies())
+		if !(body is Player):
 			return false
 	return true
 

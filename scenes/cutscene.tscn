@@ -286,3 +286,4 @@ autowrap_mode = 2
 
 [node name="audio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("41_cmn4w")
+autoplay = true

@@ -81,7 +81,8 @@ environment = SubResource("Environment_4tun8")
 [node name="plates" type="Node2D" parent="."]
 
 [node name="plate" parent="plates" instance=ExtResource("7_nrv2k")]
-position = Vector2(-551.538, -435)
+position = Vector2(-756.439, -493.263)
+rotation = -0.507891
 
 [node name="sprite" type="Sprite2D" parent="plates/plate"]
 position = Vector2(-8, 8)
@@ -90,6 +91,7 @@ texture = ExtResource("6_wqopu")
 
 [node name="plate2" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(-868.462, -16.6666)
+rotation = -0.951204
 
 [node name="sprite" type="Sprite2D" parent="plates/plate2"]
 position = Vector2(-8, 8)
@@ -105,7 +107,8 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_wqopu")
 
 [node name="plate4" parent="plates" instance=ExtResource("7_nrv2k")]
-position = Vector2(537.692, -600.833)
+position = Vector2(542.575, -600.656)
+rotation = -2.15723
 
 [node name="sprite" type="Sprite2D" parent="plates/plate4"]
 position = Vector2(-4.15381, -0.333374)
@@ -114,6 +117,7 @@ texture = ExtResource("10_fmgxl")
 
 [node name="plate5" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(-703.846, 390.833)
+rotation = 0.380482
 
 [node name="sprite" type="Sprite2D" parent="plates/plate5"]
 position = Vector2(-10.3071, -9.49957)
@@ -122,6 +126,7 @@ texture = ExtResource("9_ktivp")
 
 [node name="plate6" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(190.769, -300)
+rotation = -1.71391
 
 [node name="sprite" type="Sprite2D" parent="plates/plate6"]
 position = Vector2(-10.3071, -9.49957)
@@ -130,6 +135,7 @@ texture = ExtResource("9_ktivp")
 
 [node name="plate7" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(-178.462, -306.667)
+rotation = -3.36325
 
 [node name="sprite" type="Sprite2D" parent="plates/plate7"]
 position = Vector2(-4.15381, -0.333374)
@@ -146,6 +152,7 @@ texture = ExtResource("9_ktivp")
 
 [node name="plate9" parent="plates" instance=ExtResource("7_nrv2k")]
 position = Vector2(249.231, 246.666)
+rotation = -0.127409
 
 [node name="sprite" type="Sprite2D" parent="plates/plate9"]
 position = Vector2(-10.3071, -9.49957)
@@ -161,7 +168,7 @@ scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
 
 [node name="plate11" parent="plates" instance=ExtResource("7_nrv2k")]
-position = Vector2(-100, 700)
+position = Vector2(-87.6923, 860)
 
 [node name="sprite" type="Sprite2D" parent="plates/plate11"]
 position = Vector2(-4.15381, -0.333374)
@@ -175,6 +182,15 @@ position = Vector2(800, -127.5)
 position = Vector2(-10.3071, -9.49957)
 scale = Vector2(0.24, 0.24)
 texture = ExtResource("9_ktivp")
+
+[node name="plate13" parent="plates" instance=ExtResource("7_nrv2k")]
+position = Vector2(496.923, 655.833)
+rotation = 1.4591
+
+[node name="sprite" type="Sprite2D" parent="plates/plate13"]
+position = Vector2(-4.15381, -0.333374)
+scale = Vector2(0.23, 0.23)
+texture = ExtResource("10_fmgxl")
 
 [node name="chineses" type="Node2D" parent="."]
 

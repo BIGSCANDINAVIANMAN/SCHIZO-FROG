@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://bwicjquxhbl4b"]
+
+[ext_resource type="Script" path="res://src/jonger.gd" id="1_lyu4s"]
+[ext_resource type="Texture2D" uid="uid://dkhgd61jcbwee" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-1.png" id="8_1btae"]
+[ext_resource type="Texture2D" uid="uid://cqpdsqj5fxxj6" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-2.png" id="9_nt47l"]
+[ext_resource type="Texture2D" uid="uid://di13g3hypaucm" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-3.png" id="10_sw16q"]
+[ext_resource type="Texture2D" uid="uid://bpxevsx1e2of3" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-4.png" id="11_6ks4w"]
+[ext_resource type="Texture2D" uid="uid://q3lxys0pklv5" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-5.png" id="12_uqeoh"]
+[ext_resource type="Texture2D" uid="uid://dfufeadwow7gd" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-6.png" id="13_b36am"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olc3x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_1btae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nt47l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sw16q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6ks4w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_uqeoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_b36am")
+}],
+"loop": false,
+"name": &"1",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtdkc"]
+size = Vector2(1132, 927)
+
+[node name="jonger1" type="StaticBody2D"]
+script = ExtResource("1_lyu4s")
+
+[node name="sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_olc3x")
+animation = &"1"
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(-59, 270.5)
+shape = SubResource("RectangleShape2D_gtdkc")
+
+[node name="fireJong" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="speedup" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="fireJong" to="." method="_on_fire_jong_timeout"]

@@ -4,6 +4,7 @@ var mainScene = preload("res://scenes/main.tscn")
 var mahjong = preload('res://scenes/mahjong.tscn')
 var cutscene = preload("res://scenes/cutscene.tscn")
 var eatenScene = preload("res://scenes/endScreenFailed.tscn")
+var mahjongScene = preload("res://scenes/mahjong.tscn")
 var escapedScene = preload("res://scenes/endScreenPassed.tscn")
 
 func _process(_delta: float) -> void:
@@ -24,6 +25,10 @@ func startGame():
 	var mainInstance = mainScene.instantiate()
 	add_child(mainInstance)
 	mainInstance.connect("gameOver", _on_main_game_over)
+
+func startMahjong():
+	var mahjongInstance = mahjongScene.instantiate()
+	add_child(mahjongInstance)
 
 func _on_start_pressed() -> void:
 	var cutsceneInstance = cutscene.instantiate()

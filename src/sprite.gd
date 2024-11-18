@@ -60,7 +60,8 @@ func teleportAnimation():
 	await tweener.finished
 	await get_tree().create_timer(0.1).timeout
 	frame = 32
-	await get_tree().create_timer(0.1).timeout
+	await $"../schizophrenia".foundPosition
+	await get_tree().create_timer(0.3).timeout
 	frame = startingFrame + 3
 	var tweener2 = get_tree().create_tween()
 	tweener2.tween_property(self, "frame", startingFrame, 0.3)

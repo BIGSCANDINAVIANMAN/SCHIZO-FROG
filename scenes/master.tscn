@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/master.gd" id="1_rcd5n"]
 [ext_resource type="Texture2D" uid="uid://bow7pffaxrmqs" path="res://assets/start_backdrop.png" id="2_fddlh"]
 [ext_resource type="FontFile" uid="uid://ccvvp5fgi4sm7" path="res://font/KiriFont.otf" id="3_5pjjr"]
-[ext_resource type="AudioStream" uid="uid://d2s135ixf5irw" path="res://sfx/title.mp3" id="4_2sups"]
+[ext_resource type="AudioStream" uid="uid://c35dgooyww04i" path="res://sfx/Mii Channel Music.mp3" id="4_ta6is"]
 
 [node name="master" type="Node"]
 process_mode = 3
@@ -63,6 +63,7 @@ theme_override_font_sizes/font_size = 97
 text = "Schizo Frog :)"
 
 [node name="bgm" type="AudioStreamPlayer" parent="Start Screen"]
-stream = ExtResource("4_2sups")
+stream = ExtResource("4_ta6is")
+autoplay = true
 
 [connection signal="pressed" from="Start Screen/Control/Start" to="." method="_on_start_pressed"]

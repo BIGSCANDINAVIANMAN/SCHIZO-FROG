@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dyb2npfkrsq8x"]
+[gd_scene load_steps=10 format=3 uid="uid://dyb2npfkrsq8x"]
 
 [ext_resource type="Script" path="res://src/jonger.gd" id="1_44ucy"]
 [ext_resource type="Texture2D" uid="uid://bhl8ojactem7w" path="res://assets/the jonging chinese/Untitled_Artwork-1.png" id="1_fx783"]
@@ -7,12 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://cn4ksdfepd21v" path="res://assets/the jonging chinese/Untitled_Artwork-4.png" id="4_eeqxf"]
 [ext_resource type="Texture2D" uid="uid://dnt37cv1jvfh4" path="res://assets/the jonging chinese/Untitled_Artwork-5.png" id="5_xomqq"]
 [ext_resource type="Texture2D" uid="uid://dlyb1io85j2gg" path="res://assets/the jonging chinese/Untitled_Artwork-6.png" id="6_0qm6y"]
-[ext_resource type="Texture2D" uid="uid://dkhgd61jcbwee" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-1.png" id="7_cdv8f"]
-[ext_resource type="Texture2D" uid="uid://cqpdsqj5fxxj6" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-2.png" id="8_0qqwv"]
-[ext_resource type="Texture2D" uid="uid://di13g3hypaucm" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-3.png" id="9_y611s"]
-[ext_resource type="Texture2D" uid="uid://bpxevsx1e2of3" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-4.png" id="10_t4b0y"]
-[ext_resource type="Texture2D" uid="uid://q3lxys0pklv5" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-5.png" id="11_arasw"]
-[ext_resource type="Texture2D" uid="uid://dfufeadwow7gd" path="res://assets/the jonging chinese/Second person,/Untitled_Artwork-6.png" id="12_6f1yo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_olc3x"]
 animations = [{
@@ -35,45 +29,30 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_0qm6y")
 }],
-"loop": true,
+"loop": false,
 "name": &"1",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("7_cdv8f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_0qqwv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_y611s")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_t4b0y")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_arasw")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_6f1yo")
-}],
-"loop": true,
-"name": &"2",
-"speed": 10.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtdkc"]
 size = Vector2(1132, 927)
 
-[node name="jonger" type="StaticBody2D"]
+[node name="jonger1" type="StaticBody2D"]
 script = ExtResource("1_44ucy")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_olc3x")
 animation = &"1"
-frame_progress = 0.659832
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(-59, 270.5)
 shape = SubResource("RectangleShape2D_gtdkc")
+
+[node name="fireJong" type="Timer" parent="."]
+wait_time = 5.0
+
+[node name="speedup" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="fireJong" to="." method="_on_fire_jong_timeout"]
+[connection signal="timeout" from="speedup" to="." method="_on_speedup_timeout"]
