@@ -213,12 +213,6 @@ rotation = 2.33351
 scale = Vector2(0.5, 0.5)
 player = NodePath("../../player")
 
-[node name="chinese4" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
-position = Vector2(362.621, -963.717)
-rotation = -2.76984
-scale = Vector2(0.5, 0.5)
-player = NodePath("../../player")
-
 [node name="chinese5" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("11_cytya")]
 position = Vector2(-242.53, -998.031)
 rotation = 2.75413
@@ -227,7 +221,7 @@ player = NodePath("../../player")
 
 [node name="chinese6" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
 position = Vector2(961.449, -326.348)
-rotation = -1.85703
+rotation = 4.37903
 scale = Vector2(0.5, 0.5)
 player = NodePath("../../player")
 

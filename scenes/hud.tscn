@@ -19,7 +19,7 @@ offset_left = 42.0
 offset_top = 36.0
 offset_right = 345.0
 offset_bottom = 195.0
-color = Color(0.278431, 0.772549, 0.27451, 1)
+color = Color(0.278431, 0.607843, 0.27451, 1)
 
 [node name="timerLabel" type="RichTextLabel" parent="."]
 layout_mode = 0

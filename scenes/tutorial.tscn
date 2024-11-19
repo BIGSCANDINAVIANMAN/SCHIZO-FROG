@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxqd6iyy4eywg"]
+
+[ext_resource type="Texture2D" uid="uid://bp1tjn3vu0qb6" path="res://assets/Tutorial/Untitled_Artwork-29.png" id="29_hlmcf"]
+
+[sub_resource type="GDScript" id="GDScript_r8g6p"]
+resource_name = "tutorial"
+script/source = "extends Node2D
+
+signal close
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed(\"space\") or Input.is_action_just_pressed(\"leftClick\"):
+		await get_tree().create_tween().tween_property(self, \"modulate\", Color(0, 0, 0), 0.5).finished
+		close.emit()
+"
+
+[node name="tutorial" type="Node2D"]
+script = SubResource("GDScript_r8g6p")
+
+[node name="UntitledArtwork-30" type="Sprite2D" parent="."]
+position = Vector2(6.50007, 0)
+scale = Vector2(0.846186, 0.739787)
+texture = ExtResource("29_hlmcf")
+
+[node name="UntitledArtwork-29" type="Sprite2D" parent="."]
+scale = Vector2(0.739787, 0.739787)
+texture = ExtResource("29_hlmcf")
+
+[node name="Camera2D" type="Camera2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://cylpbyuse1xel"]
+[gd_scene load_steps=44 format=3 uid="uid://cylpbyuse1xel"]
 
 [ext_resource type="Script" path="res://src/mahjong_cutscene.gd" id="1_apyrp"]
 [ext_resource type="Texture2D" uid="uid://b2g71jmnfc6ks" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-1.png" id="2_g0a6o"]
@@ -40,6 +40,12 @@
 [ext_resource type="Texture2D" uid="uid://cqibtbij4nyam" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-37.png" id="38_hfjvw"]
 [ext_resource type="Texture2D" uid="uid://in00ngoui26i" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-38.png" id="39_i8qtb"]
 [ext_resource type="Texture2D" uid="uid://b656lom3po6xc" path="res://assets/cutscene/Transition cutscene/Untitled_Artwork-39.png" id="40_p23gw"]
+
+[sub_resource type="Gradient" id="Gradient_wdua2"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cxr8k"]
+gradient = SubResource("Gradient_wdua2")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_korky"]
 animations = [{
@@ -168,6 +174,10 @@ animations = [{
 
 [node name="mahjongCutscene" type="Node2D"]
 script = ExtResource("1_apyrp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(40, 40)
+texture = SubResource("GradientTexture2D_cxr8k")
 
 [node name="cutscene" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.38, 0.38)

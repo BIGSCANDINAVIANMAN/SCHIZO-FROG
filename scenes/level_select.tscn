@@ -17,7 +17,7 @@ script = ExtResource("1_sb2jl")
 layout_mode = 0
 offset_right = 2360.0
 offset_bottom = 1640.0
-scale = Vector2(0.81, 0.81)
+scale = Vector2(0.82, 0.82)
 texture = ExtResource("2_3tlao")
 
 [node name="startRestaurant" type="Button" parent="."]

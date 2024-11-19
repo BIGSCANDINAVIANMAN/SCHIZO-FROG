@@ -3,7 +3,6 @@ extends Control
 signal startRestaurant
 signal startMahjong
 
-
 func _on_start_mahjong_pressed() -> void:
 	startMahjong.emit()
 

@@ -50,7 +50,7 @@ position = Vector2(1230, 850)
 [node name="nom" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_lvxrb")
 
-[node name="startMahjong" type="Button" parent="."]
+[node name="exit" type="Button" parent="."]
 offset_left = 774.667
 offset_top = 1217.33
 offset_right = 1716.67
@@ -59,4 +59,4 @@ theme_override_fonts/font = ExtResource("1_81myd")
 theme_override_font_sizes/font_size = 100
 text = "Exit"
 
-[connection signal="pressed" from="startMahjong" to="." method="_on_start_mahjong_pressed"]
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

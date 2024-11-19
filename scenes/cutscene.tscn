@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://b06ycf7pn6sdx" path="res://assets/cutscene/2/20.png" id="35_kpdpl"]
 [ext_resource type="Texture2D" uid="uid://ca0p404n456ok" path="res://assets/cutscene/2/21.png" id="36_swk51"]
 [ext_resource type="Texture2D" uid="uid://c8fuh3ku3m4kr" path="res://assets/cutscene/3/Part_3_cutscene-1.png" id="37_6t72u"]
-[ext_resource type="Texture2D" uid="uid://dmjkq3kbsqv50" path="res://assets/Plates/2.png" id="38_1ehtl"]
 [ext_resource type="Texture2D" uid="uid://cqrxgw8cfxn5t" path="res://assets/cutscene/3/Part_3_cutscene-2.png" id="38_41tt1"]
 [ext_resource type="Texture2D" uid="uid://d25u35ugukfto" path="res://assets/cutscene/3/Part_3_cutscene-3.png" id="39_ymtd8"]
 [ext_resource type="Texture2D" uid="uid://c0vvgegd5x2ul" path="res://assets/cutscene/3/Part_3_cutscene-4.png" id="40_bb2my"]
@@ -60,6 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://b3tyhn1hk8dye" path="res://assets/cutscene/3/Part_3_cutscene-18.png" id="54_282dk"]
 [ext_resource type="Texture2D" uid="uid://batistu5kdj0y" path="res://assets/cutscene/3/Part_3_cutscene-19.png" id="55_s1utr"]
 [ext_resource type="Texture2D" uid="uid://b0eehcgcoronw" path="res://assets/cutscene/3/Part_3_cutscene-20.png" id="56_t8lr1"]
+[ext_resource type="Texture2D" uid="uid://cjwysr0ysidr4" path="res://assets/Tutorial/Untitled_Artwork-1.png" id="57_io6i7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x657y"]
 animations = [{
@@ -245,7 +245,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("38_1ehtl")
+"texture": ExtResource("57_io6i7")
 }],
 "loop": true,
 "name": &"4",
@@ -258,9 +258,7 @@ script = ExtResource("1_2dafy")
 [node name="sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_x657y")
-animation = &"3"
-frame = 19
-frame_progress = 1.0
+animation = &"4"
 
 [node name="textBox" type="NinePatchRect" parent="."]
 offset_left = -1025.0

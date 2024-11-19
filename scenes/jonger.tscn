@@ -49,7 +49,7 @@ position = Vector2(-59, 270.5)
 shape = SubResource("RectangleShape2D_gtdkc")
 
 [node name="fireJong" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 2.0
 
 [node name="speedup" type="Timer" parent="."]
 wait_time = 5.0
