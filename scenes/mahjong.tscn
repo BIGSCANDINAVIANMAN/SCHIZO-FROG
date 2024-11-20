@@ -21,7 +21,6 @@ script/source = "extends Area2D
 
 func _on_body_exited(body: Node2D) -> void:
 	await get_tree().create_timer(0.5).timeout
-	print(body)
 	if is_instance_valid(body) and body is Player and $outerTable.overlaps_body(body):
 		main.endGame(\"escaped\")
 "
@@ -138,7 +137,7 @@ offset_bottom = 1148.0
 theme_override_fonts/normal_font = ExtResource("5_3kcgm")
 theme_override_font_sizes/normal_font_size = 40
 bbcode_enabled = true
-text = "The gates will open in 50  seconds"
+text = "The gates will open in 30  seconds"
 
 [node name="jonger" parent="." node_paths=PackedStringArray("player") instance=ExtResource("44_vot5v")]
 position = Vector2(55, 754)

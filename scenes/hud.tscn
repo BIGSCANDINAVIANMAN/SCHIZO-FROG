@@ -35,7 +35,7 @@ bbcode_enabled = true
 text = " [center]00:00[center]"
 
 [node name="gameTimer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 45.0
 autostart = true
 
 [node name="schizoLabel" type="RichTextLabel" parent="."]
