@@ -44,4 +44,4 @@ func displayText(text):
 	textBox.visible = true
 	textBox.get_child(0).text = text
 	textBox.get_child(0).visible_ratio = 0
-	get_tree().create_tween().tween_property($textBox/text, "visible_ratio", 1, len(text)/5000.0)
+	get_tree().create_tween().tween_property($textBox/text, "visible_ratio", 1, len(text)/50.0)

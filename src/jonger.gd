@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var jongFlightSpeed = 12.5
+var jongFlightSpeed = 10
 @export var player: Player
 var jongFile = preload("res://scenes/jong.tscn")
 @onready var sprite = $sprite
@@ -13,9 +13,8 @@ func _ready() -> void:
 func fireJong():
 	sprite.play("1")
 	var newJong = jongFile.instantiate()
-	newJong.velocity = (player.global_position - global_position).normalized() * jongFlightSpeed
 	var angle = randf_range(0, 2 * PI)
-	newJong.velocity += 2 * Vector2(cos(angle), sin(angle))
+	newJong.velocity = (player.global_position - global_position + 2 * Vector2(cos(angle), sin(angle))).normalized() * jongFlightSpeed
 	add_sibling(newJong)
 	newJong.global_position = global_position
 	newJong.rotation = newJong.velocity.angle() + PI / 2

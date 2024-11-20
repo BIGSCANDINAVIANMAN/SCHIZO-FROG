@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://bw313ph3mn5vr"]
+[gd_scene load_steps=63 format=3 uid="uid://bw313ph3mn5vr"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_uqn3s"]
 [ext_resource type="Texture2D" uid="uid://d2t73wwvw1r0l" path="res://assets/runwalk.png" id="2_04rmf"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://src/schizophrenia.gd" id="2_sb4o5"]
 [ext_resource type="Texture2D" uid="uid://ct3nvfw1da7sk" path="res://assets/light.png" id="6_m5lv5"]
 [ext_resource type="Material" uid="uid://ufjjjiu3bscx" path="res://shaderMaterial.tres" id="7_5omag"]
+[ext_resource type="AudioStream" uid="uid://bcadkfrbbnl8m" path="res://sfx/short-beep-tone-47916.mp3" id="9_qg1c6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7m40n"]
 atlas = ExtResource("2_j67u5")
@@ -424,6 +425,10 @@ texture = SubResource("GradientTexture2D_5tnte")
 position = Vector2(2.5, -7.5)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_bkbne")
+
+[node name="beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_qg1c6")
+pitch_scale = 2.0
 
 [connection signal="dashed" from="schizophrenia" to="sprite" method="_on_schizophrenia_dashed"]
 [connection signal="teleported" from="schizophrenia" to="sprite" method="_on_schizophrenia_teleported"]

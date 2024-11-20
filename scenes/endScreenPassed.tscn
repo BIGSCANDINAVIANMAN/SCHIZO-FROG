@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcnafo4agiw74"]
+[gd_scene load_steps=5 format=3 uid="uid://bcnafo4agiw74"]
 
 [ext_resource type="FontFile" uid="uid://ccvvp5fgi4sm7" path="res://font/KiriFont.otf" id="1_ixtr8"]
 [ext_resource type="Texture2D" uid="uid://3ggruamypbu" path="res://assets/passedBG.jpeg" id="1_t65bt"]
+[ext_resource type="AudioStream" uid="uid://dchw64ouu6sqm" path="res://sfx/game-over-classic-206486.mp3" id="3_i2yuk"]
 
 [sub_resource type="GDScript" id="GDScript_a0k67"]
 resource_name = "endScreenPassed"
@@ -9,8 +10,12 @@ script/source = "extends Control
 
 signal exit
 
-func _on_button_pressed() -> void:
+func _on_exit_pressed() -> void:
 	exit.emit()
+
+func _ready() -> void:
+	await get_tree().create_timer(1).timeout
+	$sound.play()
 "
 
 [node name="End Screen (passed)" type="Control"]
@@ -38,9 +43,9 @@ texture = ExtResource("1_t65bt")
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 60.7143
-offset_top = 599.714
+offset_top = 519.714
 offset_right = 2448.71
-offset_bottom = 1031.71
+offset_bottom = 951.714
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_ixtr8")
 theme_override_font_sizes/font_size = 140
@@ -52,9 +57,16 @@ horizontal_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1230, 850)
 
-[node name="button" type="TextureButton" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="exit" type="Button" parent="."]
+offset_left = 774.286
+offset_top = 1140.0
+offset_right = 1716.29
+offset_bottom = 1350.0
+theme_override_fonts/font = ExtResource("1_ixtr8")
+theme_override_font_sizes/font_size = 100
+text = "Exit"
 
-[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i2yuk")
+
+[connection signal="pressed" from="exit" to="." method="_on_exit_pressed"]

@@ -1,17 +1,58 @@
-[gd_scene load_steps=8 format=3 uid="uid://bsbfmpgqqvt03"]
+[gd_scene load_steps=17 format=3 uid="uid://bsbfmpgqqvt03"]
 
 [ext_resource type="Script" path="res://src/mahjong.gd" id="1_ovsxs"]
 [ext_resource type="Texture2D" uid="uid://bv6ygqkc64ch4" path="res://assets/mahjongBG.png" id="1_tdwx2"]
 [ext_resource type="PackedScene" uid="uid://bw313ph3mn5vr" path="res://scenes/player.tscn" id="2_qp47a"]
 [ext_resource type="PackedScene" uid="uid://dn8lar488daha" path="res://scenes/hud.tscn" id="3_qhxeq"]
+[ext_resource type="FontFile" uid="uid://doj1exsma4jew" path="res://font/KiriFont.ttf" id="5_3kcgm"]
 [ext_resource type="PackedScene" uid="uid://bwicjquxhbl4b" path="res://scenes/jonger2.tscn" id="6_0kmxo"]
+[ext_resource type="Texture2D" uid="uid://bqxe4eag0oft7" path="res://assets/the jonging chinese/jongs/Jong # 1.png" id="8_ihowx"]
+[ext_resource type="Texture2D" uid="uid://b8dqujfus1um6" path="res://assets/the jonging chinese/jongs/Untitled_Artwork-2.png" id="9_o7532"]
+[ext_resource type="Texture2D" uid="uid://cpqtinirk6u50" path="res://assets/the jonging chinese/jongs/Untitled_Artwork-5.png" id="10_vncsn"]
+[ext_resource type="Texture2D" uid="uid://bxxvifpv5e7ff" path="res://assets/the jonging chinese/jongs/Untitled_Artwork-4.png" id="11_jfjcg"]
+[ext_resource type="AudioStream" uid="uid://cnqxw873fgy7x" path="res://sfx/recording-19-11-2024,-23-12-08.wav" id="12_q7aln"]
 [ext_resource type="PackedScene" uid="uid://dyb2npfkrsq8x" path="res://scenes/jonger.tscn" id="44_vot5v"]
+
+[sub_resource type="GDScript" id="GDScript_hl5k7"]
+resource_name = "mahjongTbale"
+script/source = "extends Area2D
+
+@export var main: Node2D
+
+func _on_body_exited(body: Node2D) -> void:
+	await get_tree().create_timer(0.5).timeout
+	print(body)
+	if is_instance_valid(body) and body is Player and $outerTable.overlaps_body(body):
+		main.endGame(\"escaped\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ng5w2"]
+size = Vector2(28.12, 27.68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dkhcd"]
 size = Vector2(78.9493, 128.053)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gg38"]
+size = Vector2(554.183, 956.009)
+
 [node name="mahjong" type="Node2D"]
 script = ExtResource("1_ovsxs")
+
+[node name="table" type="Area2D" parent="." node_paths=PackedStringArray("main")]
+script = SubResource("GDScript_hl5k7")
+main = NodePath("..")
+
+[node name="outerTable" type="Area2D" parent="table"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="table/outerTable"]
+position = Vector2(-5, -4.00002)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_ng5w2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table"]
+position = Vector2(-5, -4.00002)
+scale = Vector2(50, 50)
+shape = SubResource("RectangleShape2D_ng5w2")
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(-2, -2)
@@ -20,8 +61,8 @@ texture = ExtResource("1_tdwx2")
 [node name="player" parent="." instance=ExtResource("2_qp47a")]
 
 [node name="camera" type="Camera2D" parent="player"]
-zoom = Vector2(2, 2)
 position_smoothing_enabled = true
+position_smoothing_speed = 10.0
 
 [node name="jongs" type="StaticBody2D" parent="."]
 
@@ -89,6 +130,16 @@ shape = SubResource("RectangleShape2D_dkhcd")
 
 [node name="hud" parent="CanvasLayer" instance=ExtResource("3_qhxeq")]
 
+[node name="schizoLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 500.0
+offset_top = 1000.0
+offset_right = 2458.0
+offset_bottom = 1148.0
+theme_override_fonts/normal_font = ExtResource("5_3kcgm")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "The gates will open in 50  seconds"
+
 [node name="jonger" parent="." node_paths=PackedStringArray("player") instance=ExtResource("44_vot5v")]
 position = Vector2(55, 754)
 scale = Vector2(0.75, 0.75)
@@ -112,6 +163,77 @@ rotation = -1.5708
 scale = Vector2(0.75, 0.75)
 player = NodePath("../player")
 
+[node name="gates" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gates"]
+position = Vector2(-699, -686)
+rotation = 0.837758
+shape = SubResource("RectangleShape2D_7gg38")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="gates"]
+position = Vector2(880, -857)
+rotation = 0.837758
+scale = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_7gg38")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="gates"]
+position = Vector2(856.207, 892.33)
+rotation = -0.71733
+scale = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_7gg38")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="gates"]
+position = Vector2(-863, 850)
+rotation = 0.837758
+scale = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_7gg38")
+
+[node name="Sprite2D" type="Sprite2D" parent="gates"]
+position = Vector2(-579, -457)
+rotation = 0.837758
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_ihowx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="gates"]
+position = Vector2(-451, 642)
+rotation = -0.657989
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_ihowx")
+
+[node name="UntitledArtwork-2" type="Sprite2D" parent="gates"]
+position = Vector2(592, -513)
+rotation = -0.657989
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("9_o7532")
+
+[node name="UntitledArtwork-3" type="Sprite2D" parent="gates"]
+position = Vector2(523, 621)
+rotation = -0.657989
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("9_o7532")
+
+[node name="UntitledArtwork-5" type="Sprite2D" parent="gates"]
+position = Vector2(513, -630)
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("10_vncsn")
+
+[node name="UntitledArtwork-6" type="Sprite2D" parent="gates"]
+position = Vector2(-627, 497)
+rotation = 0.71733
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("10_vncsn")
+
+[node name="UntitledArtwork-4" type="Sprite2D" parent="gates"]
+position = Vector2(625, 515)
+rotation = 0.837758
+scale = Vector2(0.11, 0.11)
+texture = ExtResource("11_jfjcg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_q7aln")
+autoplay = true
+
+[connection signal="body_exited" from="table" to="table" method="_on_body_exited"]
 [connection signal="dashed" from="player" to="CanvasLayer/hud" method="_on_player_dashed"]
 [connection signal="schizoed" from="player" to="CanvasLayer/hud" method="_on_player_schizoed"]
 [connection signal="teleported" from="player" to="CanvasLayer/hud" method="_on_player_teleported"]

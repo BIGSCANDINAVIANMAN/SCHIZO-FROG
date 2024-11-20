@@ -5,32 +5,33 @@
 [ext_resource type="PackedScene" uid="uid://cqai1jwqdvcg6" path="res://scenes/hazard.tscn" id="9_3rbcj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x230s"]
-radius = 10.138
+radius = 13.3334
 
 [node name="chinese1" type="StaticBody2D"]
 scale = Vector2(0.6, 0.6)
 script = ExtResource("8_i3rqy")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(93.3333, -186.667)
+position = Vector2(201.667, 56.6663)
+rotation = 1.44339
 sprite_frames = ExtResource("2_a4i7c")
-animation = &"attack"
-frame = 4
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="chopstick" type="Area2D" parent="."]
 position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(81.6666, -578.333)
+position = Vector2(570, -9.99996)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("9_3rbcj")]
-position = Vector2(0, 26.6667)
+position = Vector2(66.6666, -4.99988)
+rotation = 1.5708
 scale = Vector2(1.2, 1.2)
 
 [node name="collision2" type="CollisionPolygon2D" parent="."]
-position = Vector2(93.3333, -256.667)
+position = Vector2(273.333, 56.6667)
+rotation = 1.44339
 scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(76.1905, 328.571, 26.1905, 247.619, -57.1429, 190.476, -135.714, 192.857, -211.905, 192.857, -266.667, 235.714, -311.905, 309.524, -326.19, 366.667, -323.809, 402.381, -409.524, 402.381, -480.952, 433.333, -476.19, 504.762, -452.381, 561.905, -211.905, 564.286, -123.81, 597.619, -11.9048, 561.905, 107.143, 564.286, 183.333, 530.952, 228.571, 464.286, 252.381, 300, 104.762, 264.286)
 

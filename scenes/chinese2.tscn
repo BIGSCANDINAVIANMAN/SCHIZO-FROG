@@ -12,7 +12,8 @@ scale = Vector2(0.6, 0.6)
 script = ExtResource("5_bygpw")
 
 [node name="sprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(93.3333, -213.333)
+position = Vector2(240, 55.0003)
+rotation = 1.41372
 sprite_frames = ExtResource("1_4eiys")
 animation = &"idle"
 
@@ -20,14 +21,17 @@ animation = &"idle"
 position = Vector2(0, 13.3333)
 
 [node name="collision" type="CollisionShape2D" parent="chopstick"]
-position = Vector2(84.9999, -545.001)
+position = Vector2(553.333, -16.6665)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("13_tajqk")]
+position = Vector2(4.99988, 10)
+rotation = 1.41372
 scale = Vector2(1.1, 1.1)
 
 [node name="collision2" type="CollisionPolygon2D" parent="."]
-position = Vector2(93.3333, -213.333)
+position = Vector2(240, 58.3333)
+rotation = 1.41372
 polygon = PackedVector2Array(195, 155, 161.667, 128.333, 123.333, 125, 78.3333, 140, 71.6667, 210, 36.6667, 215, 35, 170, -10, 105, -91.6667, 85, -165, 98.3333, -183.333, 126.667, -215, 180, -310, 241.667, -326.667, 286.667, -313.333, 323.333, -283.333, 345, -163.333, 333.333, -105, 378.333, -50, 363.333, -23.3333, 376.667, 21.6667, 328.333, 66.6667, 331.667, 156.667, 313.333, 175, 263.333, 191.667, 250, 188.333, 206.667)
 
 [connection signal="playerEaten" from="hazard" to="." method="_on_hazard_player_eaten"]

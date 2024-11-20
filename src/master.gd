@@ -11,6 +11,7 @@ var levelSelect = preload("res://scenes/level_select.tscn")
 var startScreen = preload('res://scenes/start_screen.tscn')
 var tutorialScene = preload("res://scenes/tutorial.tscn")
 
+@onready var bgm = $bgm
 var openedRestaurantBefore = false
 var openedMahjongBefore = false
 
@@ -27,7 +28,7 @@ func _on_main_game_over(result) -> void:
 		gameOverScreen = eatenScene.instantiate()
 		call_deferred("add_child", gameOverScreen)
 	elif result == "escaped":
-		gameOverScreen = mahjong.instantiate()
+		gameOverScreen = escapedScene.instantiate()
 		call_deferred("add_child", gameOverScreen)
 	$main.queue_free()
 	gameOverScreen.modulate = Color(0, 0, 0)
@@ -41,7 +42,7 @@ func _on_mahjong_game_over(result) -> void:
 		gameOverScreen = eatenScene.instantiate()
 		call_deferred("add_child", gameOverScreen)
 	elif result == "escaped":
-		gameOverScreen = mahjong.instantiate()
+		gameOverScreen = escapedScene.instantiate()
 		call_deferred("add_child", gameOverScreen)
 	$mahjong.queue_free()
 	gameOverScreen.modulate = Color(0, 0, 0)
@@ -57,6 +58,8 @@ func returnToMenu(gameOverScreen):
 	add_child(menuInstance)
 	await get_tree().create_tween().tween_property(menuInstance, "modulate", Color(1, 1, 1), 0.5).finished
 	menuInstance.connect("startPressed", _on_start_pressed)
+	bgm.play()
+	bgm.volume_db = 0
 
 func startGame():
 	var soundTweener = get_tree().create_tween()
@@ -87,6 +90,8 @@ func startGame():
 	get_tree().create_tween().tween_property(mainInstance, "modulate", Color(1, 1, 1), 0.5)
 
 func startMahjong():
+	var soundTweener = get_tree().create_tween()
+	soundTweener.tween_property($"bgm", "volume_db", -80, 0.5)
 	var isLevelSelect = false
 	for child in get_children():
 		if child.name == "levelSelect":

@@ -21,7 +21,7 @@ func _physics_process(_delta: float) -> void:
 	if shouldActivate("switchUpDown"):
 		switchUpDown()
 	if shouldActivate("sonic"):
-		sonic(1000)
+		sonic(1500)
 	if shouldActivate("antiSonic"):
 		antiSonic(0.6)
 	if shouldActivate("teleport"):
@@ -30,6 +30,7 @@ func _physics_process(_delta: float) -> void:
 	for ability in activeAbilities:
 		if shouldActivate(ability):
 			startTimer(ability, 4)
+			$"../beep".play()
 
 # abilities dict formatted as {"abilityname": "input"}
 # abilities not stated in dict set to false (inactive)
@@ -127,5 +128,8 @@ var cooldowns = {
 
 func startTimer(ability, cooldownTime):
 	cooldowns[ability] = false
-	await get_tree().create_timer(cooldownTime).timeout
+	get_tree().create_timer(cooldownTime).connect("timeout", endTimer.bind(ability))
+
+func endTimer(ability):
 	cooldowns[ability] = true
+

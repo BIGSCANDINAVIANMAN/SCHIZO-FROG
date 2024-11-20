@@ -15,7 +15,9 @@ func setCaptureTime(time):
 	captureTime = time
 
 func eatPlayer():
-	var finalRotation = 1.431 + (player.global_position - global_position).angle()
+	hazard.monitoring = false
+	var angle = (player.global_position - global_position).angle()
+	var finalRotation = angle
 	var tweener = get_tree().create_tween()
 	tweener.tween_property(self, "rotation", finalRotation, 0.2 * abs(finalRotation - rotation)).finished
 	await tweener.finished
@@ -26,7 +28,7 @@ func eatPlayer():
 		player.visible = false
 		player.frozen = true
 		await sprite.animation_finished
-		await get_tree().create_timer(0.5).timeout
+		await get_tree().create_timer(0.3).timeout
 		main.endGame("eaten")
 		return
 	await sprite.animation_finished
@@ -35,6 +37,7 @@ func eatPlayer():
 	sprite.play("idle")
 	await newTweener.finished
 	await get_tree().create_timer(1).timeout
+	hazard.monitoring = true
 	if hazard.overlaps_body(player):
 		eatPlayer()
 
