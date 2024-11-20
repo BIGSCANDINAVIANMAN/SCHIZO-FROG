@@ -25,7 +25,7 @@ position = Vector2(553.333, -16.6665)
 shape = SubResource("CircleShape2D_x230s")
 
 [node name="hazard" parent="." instance=ExtResource("13_tajqk")]
-position = Vector2(4.99988, 10)
+position = Vector2(31.6665, 10)
 rotation = 1.41372
 scale = Vector2(1.1, 1.1)
 
