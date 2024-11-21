@@ -17,6 +17,8 @@ func setCaptureTime(time):
 func eatPlayer():
 	hazard.monitoring = false
 	var angle = (player.global_position - global_position).angle()
+	print(angle)
+	
 	var finalRotation = angle
 	var tweener = get_tree().create_tween()
 	tweener.tween_property(self, "rotation", finalRotation, 0.2 * abs(finalRotation - rotation)).finished

@@ -256,8 +256,7 @@ player = NodePath("../../player")
 
 [node name="chinese6" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("12_yreli")]
 position = Vector2(961.449, -326.348)
-rotation = -3.49066
-scale = Vector2(0.5, 0.5)
+rotation = 2.8571
 player = NodePath("../../player")
 
 [node name="chinese7" parent="chineses" node_paths=PackedStringArray("player") instance=ExtResource("10_lishg")]
